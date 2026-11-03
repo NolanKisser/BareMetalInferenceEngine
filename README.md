@@ -31,6 +31,12 @@ To compile and run this project, you must have the following installed and avail
 
 > **Windows Users**: It is highly recommended to run the build commands from inside the **Developer Command Prompt for Visual Studio**, as this automatically configures the environment variables for `cl` and `cmake`.
 
+### Common Visual Studio Troubleshooting
+If CMake throws an error inside Visual Studio (`CMake Error at ... CMakeDetermineCompilerId.cmake` or failing to find `cuda_runtime.h`):
+- **Missing C++ Workload**: Ensure you checked **"Desktop development with C++"** in the Visual Studio Installer.
+- **Missing CUDA Toolkit**: Ensure you downloaded the **NVIDIA CUDA Toolkit**. Visual Studio does *not* come with it.
+- **Stale CMake Cache**: If you installed CUDA *after* opening Visual Studio, CMake will remember its previous failure. Go to **Project > CMake Cache > Delete Cache** and regenerate the project.
+
 ## Building the Engine
 
 Clone the repository and build using standard CMake commands:
@@ -42,30 +48,38 @@ cmake ..
 cmake --build . --config Release
 ```
 
-This will output the three executables into the `build/` (or `build/Release/`) directory.
+*(Note: If building via Visual Studio's CMake integration, simply open the folder and use the "Build All" or "F5" functionality).*
 
-## Testing and Usage
+## Testing and Benchmarking
 
-### 1. Run the Baseline Engine Test
-This runs a dummy prompt through the Tokenizer and Execution engine to ensure memory allocates successfully and CUDA kernels launch without crashing.
-
-```bash
-./inference_engine
-```
-
-### 2. Run the Benchmark Tool
-Use the benchmark tool to profile the speed of the custom CUDA kernels. It performs a 100-token generation loop.
+### 1. Run the BareMetal GPU Benchmark
+Use the built-in benchmark tool to profile the speed of our custom CUDA kernels. It simulates a 32-layer transformer matrix multiplication loop to generate 100 tokens and outputs the raw `Tokens / Sec` hardware limit.
 
 ```bash
-./benchmark
+# Via command line
+./build/Release/benchmark.exe
+
+# Or via Visual Studio
+Select "benchmark.exe" as your Startup Item and press F5
 ```
 *Tip: To analyze the memory bandwidth and SM occupancy of the custom block-tiled GEMM kernels, run this under NVIDIA Nsight Compute:*
-`ncu --set full ./benchmark`
+`ncu --set full ./benchmark.exe`
+
+### 2. Compare Efficiency against PyTorch
+To truly prove the efficiency of this BareMetal engine, we have included a `pytorch_benchmark.py` script. This script simulates the exact same 32-layer matrix multiplications using the Python/PyTorch backend.
+
+To compare the speed:
+1. Ensure you have Python and PyTorch installed (`pip install torch`).
+2. Run the baseline comparison:
+```bash
+python pytorch_benchmark.py
+```
+By comparing the `Tokens / Sec` of `pytorch_benchmark.py` against `benchmark.exe`, you can quantify the efficiency gained by stripping out the Python Global Interpreter Lock (GIL) and framework overhead!
 
 ### 3. Start the API Server
 Launch the lightweight socket server to listen for inference requests.
 
 ```bash
-./server
+./build/Release/server.exe
 ```
 Once running, the server will block and listen on port `8080`. You can simulate sending a payload to it, and the server will execute the forward pass and print the generation status.
