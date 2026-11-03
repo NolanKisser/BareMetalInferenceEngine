@@ -52,34 +52,60 @@ cmake --build . --config Release
 
 ## Testing and Benchmarking
 
-### 1. Run the BareMetal GPU Benchmark
-Use the built-in benchmark tool to profile the speed of our custom CUDA kernels. It simulates a 32-layer transformer matrix multiplication loop to generate 100 tokens and outputs the raw `Tokens / Sec` hardware limit.
+### 1. Run the Checks
+The CPU checks run anywhere. The GPU checks compare each kernel with a CPU reference and need a CUDA device.
 
 ```bash
-# Via command line
-./build/Release/benchmark.exe
-
-# Or via Visual Studio
-Select "benchmark.exe" as your Startup Item and press F5
+ctest --test-dir build -C Release -L cpu --output-on-failure
+ctest --test-dir build -C Release -L gpu --output-on-failure
 ```
-*Tip: To analyze the memory bandwidth and SM occupancy of the custom block-tiled GEMM kernels, run this under NVIDIA Nsight Compute:*
-`ncu --set full ./benchmark.exe`
 
-### 2. Compare Efficiency against PyTorch
-To truly prove the efficiency of this BareMetal engine, we have included a `pytorch_benchmark.py` script. This script simulates the exact same 32-layer matrix multiplications using the Python/PyTorch backend.
+GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally. **6 of the 13 GPU checks currently fail**, for the reasons listed under Current Status.
 
-To compare the speed:
-1. Ensure you have Python and PyTorch installed (`pip install torch`).
-2. Run the baseline comparison:
+### 2. Benchmark the GEMM Kernel Against PyTorch
+`gemm_bench` and `benchmarks/pytorch_gemm.py` run the same matrix multiplies on the same GPU and write their results as JSON.
+
 ```bash
-python pytorch_benchmark.py
+./build/Release/gemm_bench.exe baremetal.json
+pip install torch --index-url https://download.pytorch.org/whl/cu128
+python benchmarks/pytorch_gemm.py pytorch.json
 ```
-By comparing the `Tokens / Sec` of `pytorch_benchmark.py` against `benchmark.exe`, you can quantify the efficiency gained by stripping out the Python Global Interpreter Lock (GIL) and framework overhead!
 
-### 3. Start the API Server
-Launch the lightweight socket server to listen for inference requests.
+RTX 50 series GPUs need a PyTorch build that supports `sm_120`, such as the `cu128` build above.
+
+Results on an RTX 5080 with PyTorch 2.11.0, from `benchmarks/results/`:
+
+| Workload | BareMetal | PyTorch |
+| --- | --- | --- |
+| Multiply two 256 x 256 matrices | 19 us | 24 us |
+| Multiply two 4096 x 4096 matrices | 28.8 ms | 3.5 ms |
+| 32 layers of vector x 4096 x 4096 matrix | 158 passes/s | 342 passes/s |
+
+These numbers cover matrix multiplies only, so neither one is a token rate.
+
+### 3. The `benchmark` Program
+`benchmark` prints a tokens-per-second figure, but it does not measure inference. It loads no weights, so each token costs only 32 empty kernel launches, some console output and a vector of zeros. Don't use this figure as a measure of speed.
+
+### 4. Run the API Server
 
 ```bash
 ./build/Release/server.exe
 ```
-Once running, the server will block and listen on port `8080`. You can simulate sending a payload to it, and the server will execute the forward pass and print the generation status.
+
+The server does not open a socket yet. It processes one simulated request through `forward()` and exits.
+
+## Current Status
+
+This project is a work in progress and does not run a model yet.
+
+| Component | Status |
+| --- | --- |
+| GEMM kernel | Works with separate buffers. Gives wrong results in place, which is how `forward()` calls it. |
+| RMSNorm kernel | Correct up to 256 elements. Larger vectors are wrong because the sum is per GPU block. |
+| RoPE, softmax and SwiGLU kernels | Empty |
+| Attention, embeddings and output projection | Not implemented |
+| VRAM allocation and weight copy | Works |
+| KV cache | Allocated, but never read or written |
+| Weight loader | Fills tensors with zeros and does not read the file |
+| Tokenizer | Converts characters to byte values. BPE is not implemented. |
+| Server | Simulates one request. No socket is opened. |

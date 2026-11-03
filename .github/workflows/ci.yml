@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-cpu-tests:
+    # GitHub's hosted runners have no GPU, so this compiles the CUDA code but
+    # cannot run it. Run the GPU checks locally with: ctest -L gpu
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install the build tools and CUDA toolkit
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends cmake ninja-build g++ nvidia-cuda-toolkit
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_ARCHITECTURES=80
+      - name: Build every target
+        run: cmake --build build
+      - name: Run the CPU tests
+        run: ctest --test-dir build -L cpu --output-on-failure
+
+  python-syntax:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check that the benchmark script compiles
+        run: python -m py_compile benchmarks/pytorch_gemm.py
