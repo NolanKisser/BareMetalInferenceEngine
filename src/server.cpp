@@ -40,6 +40,7 @@ void InferenceServer::start() {
 void InferenceServer::handle_client(const std::string& request_payload) {
     // Parse JSON, encode prompt, forward pass, decode tokens...
     std::vector<int> dummy_tokens = {1, 2, 3}; 
+    engine_->reset();
     engine_->forward(dummy_tokens);
     std::cout << "Request processed successfully." << std::endl;
 }

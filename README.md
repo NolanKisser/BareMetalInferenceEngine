@@ -17,9 +17,9 @@ This project was designed as an educational, bare-metal approach to serving Larg
 
 The project builds 3 distinct executable targets:
 
-1. `inference_engine`: The core executable for testing tokenization and weight loading.
-2. `benchmark`: A standalone tool that bypasses the network layer to stream 100 tokens as fast as possible, reporting raw `Tokens/Sec`.
-3. `server`: A socket-based API endpoint that listens for incoming generation requests and routes them through the continuous batching/execution engine.
+1. `inference_engine`: Generates tokens greedily from a prompt of token IDs.
+2. `benchmark`: A standalone tool that generates 100 tokens with a loaded model, reporting raw `Tokens/Sec`.
+3. `server`: A placeholder for the API endpoint. It runs one simulated request through the engine and exits.
 
 ## Prerequisites
 
@@ -50,17 +50,47 @@ cmake --build . --config Release
 
 *(Note: If building via Visual Studio's CMake integration, simply open the folder and use the "Build All" or "F5" functionality).*
 
+## Running a Model
+
+The engine runs Llama-architecture models whose weights are in `model.safetensors`. These steps use `nickypro/tinyllama-15M`, an MIT-licensed model with 6 layers, 288 dimensions and a 32,000-token vocabulary. It is trained on children's stories.
+
+```bash
+pip install torch transformers safetensors numpy huggingface_hub
+
+# Download the weights, pinned to one revision. Avoid the repository's pickle file.
+hf download nickypro/tinyllama-15M model.safetensors config.json tokenizer.json tokenizer_config.json --revision a97e01fa7d54c088df9dc1b53d581a863ce08cd6 --local-dir models/tinyllama-15M
+
+# Convert the weights to the engine's format
+python scripts/export_llama.py models/tinyllama-15M models/tinyllama-15M/export
+
+# Generate 40 tokens from "Once upon a time"
+./build/Release/inference_engine.exe models/tinyllama-15M/export 40 1 9038 2501 263 931
+```
+
+The tokenizer does not implement BPE yet, so prompts and output are token IDs.
+
 ## Testing and Benchmarking
 
 ### 1. Run the Checks
 The CPU checks run anywhere. The GPU checks compare each kernel with a CPU reference and need a CUDA device.
+
+To also compare the engine's logits with Hugging Face `transformers`, write the reference file and then re-run CMake's configure step, which adds the `logits` test:
+
+```bash
+python scripts/reference_logits.py models/tinyllama-15M models/tinyllama-15M/export/reference_logits.bin
+cmake -S . -B build
+```
+
+Then run the checks:
 
 ```bash
 ctest --test-dir build -C Release -L cpu --output-on-failure
 ctest --test-dir build -C Release -L gpu --output-on-failure
 ```
 
-GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally. **3 of the 13 GPU checks currently fail**, because the softmax, SwiGLU and RoPE kernels are still empty.
+GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally.
+
+The `logits` test feeds a whole sequence through the engine, using the KV cache, and compares every logit at every position with the reference. With the default 45-token sequence, the largest difference is 0.00005 and the most likely next token always matches.
 
 ### 2. Benchmark the GEMM Kernel Against PyTorch
 `gemm_bench` and `benchmarks/pytorch_gemm.py` run the same matrix multiplies on the same GPU and write their results as JSON.
@@ -84,28 +114,32 @@ Results on an RTX 5080 with PyTorch 2.11.0, from `benchmarks/results/`:
 These numbers cover matrix multiplies only, so neither one is a token rate.
 
 ### 3. The `benchmark` Program
-`benchmark` prints a tokens-per-second figure, but it does not measure inference. It loads no weights, so each token costs only 32 empty kernel launches. As its output says, the figure reflects kernel launch overhead.
+`benchmark` generates 100 tokens greedily, one at a time, with the KV cache.
+
+```bash
+./build/Release/benchmark.exe models/tinyllama-15M/export
+```
+
+With `tinyllama-15M` on an RTX 5080, it reports about 800 tokens per second, or 1.2 ms per token. This has not been compared with another runtime on the same model yet.
 
 ### 4. Run the API Server
 
 ```bash
-./build/Release/server.exe
+./build/Release/server.exe models/tinyllama-15M/export
 ```
 
 The server does not open a socket yet. It processes one simulated request through `forward()` and exits.
 
 ## Current Status
 
-This project is a work in progress and does not run a model yet.
+The engine runs small Llama-architecture models, and its logits match Hugging Face `transformers`. It is still a work in progress.
 
 | Component | Status |
 | --- | --- |
+| Forward pass and greedy generation | Works, one token at a time, for a batch of one |
 | GEMM kernel | Works. Input and output must be separate buffers. |
-| RMSNorm kernel | Works, including in place. |
-| RoPE, softmax and SwiGLU kernels | Empty |
-| Attention, embeddings and output projection | Not implemented |
-| VRAM allocation and weight copy | Works |
-| KV cache | Allocated, but never read or written |
-| Weight loader | Fills tensors with zeros and does not read the file |
+| RMSNorm, RoPE, softmax, SwiGLU and attention kernels | Work |
+| KV cache | Works |
+| Weight loading | Works for 32-bit float exports. Quantized weights are not supported. |
 | Tokenizer | Converts characters to byte values. BPE is not implemented. |
 | Server | Simulates one request. No socket is opened. |
