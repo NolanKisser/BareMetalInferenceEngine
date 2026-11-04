@@ -41,3 +41,15 @@ add_test(NAME kernels COMMAND kernel_tests)
 set_tests_properties(kernels PROPERTIES LABELS gpu)
 
 add_executable(gemm_bench benchmarks/gemm_bench.cu src/kernels.cu)
+
+add_executable(loader_test tests/loader_test.cpp src/weights.cpp)
+add_test(NAME loader COMMAND loader_test)
+set_tests_properties(loader PROPERTIES LABELS cpu)
+
+# Compares logits with a reference model. Needs the export described in the README.
+add_executable(logits_test tests/logits_test.cu src/weights.cpp src/memory_allocator.cu src/kv_cache.cu src/kernels.cu src/execution_engine.cu)
+set(BAREMETAL_MODEL_DIR "${CMAKE_SOURCE_DIR}/models/tinyllama-15M/export" CACHE PATH "Exported model that the logits test uses")
+if(EXISTS "${BAREMETAL_MODEL_DIR}/reference_logits.bin")
+    add_test(NAME logits COMMAND logits_test "${BAREMETAL_MODEL_DIR}")
+    set_tests_properties(logits PROPERTIES LABELS "gpu;model")
+endif()
