@@ -33,5 +33,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Check that the benchmark script compiles
-        run: python -m py_compile benchmarks/pytorch_gemm.py
+      - name: Check that the Python scripts compile
+        run: python -m py_compile benchmarks/pytorch_gemm.py benchmarks/pytorch_tokens.py scripts/export_llama.py scripts/plot_benchmarks.py scripts/reference_logits.py

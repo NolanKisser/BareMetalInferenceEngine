@@ -13,13 +13,24 @@ This project was designed as an educational, bare-metal approach to serving Larg
 - **Custom CUDA Kernels**: Hand-written block-tiled `__global__` kernels for RMSNorm, RoPE, Matrix Multiplication (GEMM), and SwiGLU activations.
 - **Dependency-Free API**: A bare-bones POSIX/Winsock server endpoint to accept inference requests.
 
+## Performance
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/benchmarks-dark.svg">
+  <img alt="On tinyllama-15M, BareMetal generates 852 tokens per second and PyTorch 303, with identical tokens. On the matrix multiply kernel, PyTorch reaches 39,664 GFLOP/s and BareMetal 4,944 at size 4,096." src="docs/benchmarks-light.svg">
+</picture>
+
+On `tinyllama-15M`, BareMetal generates tokens 2.8 times as fast as PyTorch with Hugging Face `transformers`, and both produce the same 100 tokens. PyTorch's multiply kernel is 8 times as fast at size 4096, so the lead probably comes from lower overhead per token, though this hasn't been profiled. Only this small model has been measured, and larger models spend more of each token in matrix multiplies, so the lead may shrink or reverse.
+
+See [Testing and Benchmarking](#testing-and-benchmarking) to reproduce these numbers.
+
 ## Project Structure
 
 The project builds 3 distinct executable targets:
 
-1. `inference_engine`: The core executable for testing tokenization and weight loading.
-2. `benchmark`: A standalone tool that bypasses the network layer to stream 100 tokens as fast as possible, reporting raw `Tokens/Sec`.
-3. `server`: A socket-based API endpoint that listens for incoming generation requests and routes them through the continuous batching/execution engine.
+1. `inference_engine`: Generates tokens greedily from a prompt of token IDs.
+2. `benchmark`: A standalone tool that generates 100 tokens with a loaded model, reporting raw `Tokens/Sec`.
+3. `server`: A placeholder for the API endpoint. It runs one simulated request through the engine and exits.
 
 ## Prerequisites
 
@@ -36,6 +47,7 @@ If CMake throws an error inside Visual Studio (`CMake Error at ... CMakeDetermin
 - **Missing C++ Workload**: Ensure you checked **"Desktop development with C++"** in the Visual Studio Installer.
 - **Missing CUDA Toolkit**: Ensure you downloaded the **NVIDIA CUDA Toolkit**. Visual Studio does *not* come with it.
 - **Stale CMake Cache**: If you installed CUDA *after* opening Visual Studio, CMake will remember its previous failure. Go to **Project > CMake Cache > Delete Cache** and regenerate the project.
+- **Blocked Programs**: If a built program fails with `An Application Control policy has blocked this file`, or `Permission denied` in Git Bash, Windows Smart App Control rejected that unsigned file. You can check this setting under **Windows Security > App & browser control**.
 
 ## Building the Engine
 
@@ -50,62 +62,119 @@ cmake --build . --config Release
 
 *(Note: If building via Visual Studio's CMake integration, simply open the folder and use the "Build All" or "F5" functionality).*
 
+## Running a Model
+
+The engine runs Llama-architecture models whose weights are in `model.safetensors`. These steps use `nickypro/tinyllama-15M`, an MIT-licensed model with 6 layers, 288 dimensions and a 32,000-token vocabulary. It is trained on children's stories.
+
+```bash
+pip install torch transformers safetensors numpy huggingface_hub
+
+# Download the weights, pinned to one revision. Avoid the repository's pickle file.
+hf download nickypro/tinyllama-15M model.safetensors config.json tokenizer.json tokenizer_config.json --revision a97e01fa7d54c088df9dc1b53d581a863ce08cd6 --local-dir models/tinyllama-15M
+
+# Convert the weights to the engine's format
+python scripts/export_llama.py models/tinyllama-15M models/tinyllama-15M/export
+
+# Generate 40 tokens from "Once upon a time"
+./build/Release/inference_engine.exe models/tinyllama-15M/export 40 1 9038 2501 263 931
+```
+
+The tokenizer does not implement BPE yet, so prompts and output are token IDs.
+
 ## Testing and Benchmarking
 
 ### 1. Run the Checks
 The CPU checks run anywhere. The GPU checks compare each kernel with a CPU reference and need a CUDA device.
+
+To also compare the engine's logits with Hugging Face `transformers`, write the reference file and then re-run CMake's configure step, which adds the `logits` test:
+
+```bash
+python scripts/reference_logits.py models/tinyllama-15M models/tinyllama-15M/export/reference_logits.bin
+cmake -S . -B build
+```
+
+Then run the checks:
 
 ```bash
 ctest --test-dir build -C Release -L cpu --output-on-failure
 ctest --test-dir build -C Release -L gpu --output-on-failure
 ```
 
-GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally. **3 of the 13 GPU checks currently fail**, because the softmax, SwiGLU and RoPE kernels are still empty.
+GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally.
+
+The `logits` test feeds a whole sequence through the engine, using the KV cache, and compares every logit at every position with the reference. With the default 45-token sequence, the largest difference is 0.00005 and the most likely next token always matches.
 
 ### 2. Benchmark the GEMM Kernel Against PyTorch
 `gemm_bench` and `benchmarks/pytorch_gemm.py` run the same matrix multiplies on the same GPU and write their results as JSON.
 
+RTX 50 series GPUs need a PyTorch build that supports `sm_120`, such as the `cu128` build below. An older build can still report `torch.cuda.is_available()` as `True` and then fail with `no kernel image is available`, so use a separate environment:
+
 ```bash
-./build/Release/gemm_bench.exe baremetal.json
-pip install torch --index-url https://download.pytorch.org/whl/cu128
-python benchmarks/pytorch_gemm.py pytorch.json
+py -3.12 -m venv ~/venvs/torch-cu128
+~/venvs/torch-cu128/Scripts/python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cu128
+~/venvs/torch-cu128/Scripts/python.exe -m pip install transformers safetensors
 ```
 
-RTX 50 series GPUs need a PyTorch build that supports `sm_120`, such as the `cu128` build above.
+Then run both sides:
 
-Results on an RTX 5080 with PyTorch 2.11.0, from `benchmarks/results/`:
+```bash
+./build/Release/gemm_bench.exe benchmarks/results/baremetal_run1.json
+~/venvs/torch-cu128/Scripts/python.exe benchmarks/pytorch_gemm.py benchmarks/results/pytorch_run1.json
+```
+
+Results on an RTX 5080 with PyTorch 2.11.0, pooled from two runs in `benchmarks/results/`:
 
 | Workload | BareMetal | PyTorch |
 | --- | --- | --- |
-| Multiply two 256 x 256 matrices | 18 us | 22 us |
-| Multiply two 4096 x 4096 matrices | 28.8 ms | 3.5 ms |
-| 32 layers of vector x 4096 x 4096 matrix | 156 passes/s | 347 passes/s |
+| Multiply two 256 x 256 matrices | 18 us | 24 us |
+| Multiply two 4096 x 4096 matrices | 27.8 ms | 3.5 ms |
+| 32 layers of vector x 4096 x 4096 matrix | 161 passes/s | 351 passes/s |
 
 These numbers cover matrix multiplies only, so neither one is a token rate.
 
-### 3. The `benchmark` Program
-`benchmark` prints a tokens-per-second figure, but it does not measure inference. It loads no weights, so each token costs only 32 empty kernel launches. As its output says, the figure reflects kernel launch overhead.
+### 3. Benchmark Token Generation Against PyTorch
+`benchmark` and `benchmarks/pytorch_tokens.py` generate 100 tokens greedily from the same start token, one at a time with a KV cache, and copy the logits to the host for every token. Each one times 20 repetitions and writes the results as JSON, including the tokens it generated.
+
+```bash
+./build/Release/benchmark.exe models/tinyllama-15M/export benchmarks/results/tokens_baremetal_run1.json
+~/venvs/torch-cu128/Scripts/python.exe benchmarks/pytorch_tokens.py models/tinyllama-15M benchmarks/results/tokens_pytorch_run1.json
+```
+
+Results on an RTX 5080 with `tinyllama-15M`, pooled from two runs:
+
+| Engine | Tokens per second | Time per token |
+| --- | --- | --- |
+| BareMetal | 852 | 1.17 ms |
+| PyTorch 2.11.0 with `transformers` 5.22.1 and SDPA attention | 303 | 3.30 ms |
+
+Both engines generated the same 100 tokens.
+
+To redraw the chart in [Performance](#performance), save the output of `logits_test` as `benchmarks/results/logits_test.txt`, make sure every result file has both `_run1` and `_run2` versions, and run:
+
+```bash
+python scripts/plot_benchmarks.py
+```
+
+The script stops if the engines generated different tokens or the results came from different GPUs.
 
 ### 4. Run the API Server
 
 ```bash
-./build/Release/server.exe
+./build/Release/server.exe models/tinyllama-15M/export
 ```
 
 The server does not open a socket yet. It processes one simulated request through `forward()` and exits.
 
 ## Current Status
 
-This project is a work in progress and does not run a model yet.
+The engine runs small Llama-architecture models, and its logits match Hugging Face `transformers`. It is still a work in progress.
 
 | Component | Status |
 | --- | --- |
+| Forward pass and greedy generation | Works, one token at a time, for a batch of one |
 | GEMM kernel | Works. Input and output must be separate buffers. |
-| RMSNorm kernel | Works, including in place. |
-| RoPE, softmax and SwiGLU kernels | Empty |
-| Attention, embeddings and output projection | Not implemented |
-| VRAM allocation and weight copy | Works |
-| KV cache | Allocated, but never read or written |
-| Weight loader | Fills tensors with zeros and does not read the file |
+| RMSNorm, RoPE, softmax, SwiGLU and attention kernels | Work |
+| KV cache | Works |
+| Weight loading | Works for 32-bit float exports. Quantized weights are not supported. |
 | Tokenizer | Converts characters to byte values. BPE is not implemented. |
 | Server | Simulates one request. No socket is opened. |

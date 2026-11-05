@@ -1,0 +1,6 @@
+  position  44: token 29991, worst logit error 0.000013
+PASS  logits at all 45 positions: worst error 0.000050, limit 0.010
+PASS  most likely next token: 0 of 45 positions differ
+PASS  reset, then the whole sequence in one call: worst error 0.000013
+
+0 check(s) failed

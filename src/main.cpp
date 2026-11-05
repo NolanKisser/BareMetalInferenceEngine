@@ -1,44 +1,47 @@
+#include <algorithm>
+#include <exception>
 #include <iostream>
 #include <memory>
-#include "tokenizer.h"
+#include <string>
+#include <vector>
 #include "weights.h"
 #include "memory_allocator.h"
 #include "kv_cache.h"
 #include "execution_engine.h"
 
+// Generates tokens greedily from a prompt of token IDs. The tokenizer does not
+// implement BPE yet, so prompts and output are token IDs.
 int main(int argc, char** argv) {
-    std::cout << "BareMetal Inference Engine - Phase 1 & 2" << std::endl;
+    if (argc < 4) {
+        std::cerr << "Usage: inference_engine <model_dir> <new_tokens> <token_id> [token_id ...]" << std::endl;
+        return 1;
+    }
 
-    Tokenizer tokenizer;
-    std::string vocab_path = "dummy_vocab.txt";
-    tokenizer.load(vocab_path);
+    try {
+        ModelLoader loader;
+        if (!loader.load(argv[1])) return 1;
+        const ModelConfig& config = loader.get_config();
 
-    std::string prompt = "Hello, BareMetal!";
-    auto tokens = tokenizer.encode(prompt);
-    
-    std::cout << "Prompt: " << prompt << std::endl;
-    std::cout << "Tokens: [ ";
-    for (int t : tokens) { std::cout << t << " "; }
-    std::cout << "]" << std::endl;
+        const int new_tokens = std::stoi(argv[2]);
+        std::vector<int> prompt;
+        for (int i = 3; i < argc; ++i) prompt.push_back(std::stoi(argv[i]));
 
-    ModelLoader loader;
-    std::string model_path = "dummy_model.bin";
-    loader.load_metadata(model_path);
-    loader.load_weights(model_path);
+        auto allocator = std::make_shared<MemoryAllocator>();
+        allocator->allocate_and_copy_weights(loader.get_tensors());
+        auto kv_cache = std::make_shared<KVCache>(1, config.max_seq_len, config.num_layers, config.num_heads, config.head_dim());
+        ExecutionEngine engine(allocator, kv_cache, config);
 
-    // --- Phase 2: Memory & Execution ---
-    auto allocator = std::make_shared<MemoryAllocator>();
-    allocator->allocate_and_copy_weights(loader.get_tensors());
-
-    // Dummy Llama-3 8B params: 1 batch, 2048 seq_len, 32 layers, 8 kv_heads, 128 head_dim
-    auto kv_cache = std::make_shared<KVCache>(1, 2048, 32, 8, 128);
-
-    ExecutionEngine engine(allocator, kv_cache);
-    
-    // Perform a dummy forward pass
-    engine.forward(tokens);
-
-    std::cout << "\nEngine execution complete." << std::endl;
-
+        std::vector<float> logits = engine.forward(prompt);
+        std::cout << "Generated token IDs:";
+        for (int i = 0; i < new_tokens; ++i) {
+            const int next = static_cast<int>(std::max_element(logits.begin(), logits.end()) - logits.begin());
+            std::cout << " " << next;
+            if (i + 1 < new_tokens) logits = engine.forward({next});
+        }
+        std::cout << std::endl;
+    } catch (const std::exception& error) {
+        std::cerr << "Error: " << error.what() << std::endl;
+        return 1;
+    }
     return 0;
 }
