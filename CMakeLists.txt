@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.24 FATAL_ERROR)
+
+# "native" targets the installed GPU and needs CMake 3.24+. This must come before
+# project(), which otherwise fills in the compiler's oldest supported architecture.
+if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES AND NOT DEFINED ENV{CUDAARCHS})
+    set(CMAKE_CUDA_ARCHITECTURES "native")
+endif()
+
 project(BareMetalInferenceEngine LANGUAGES CXX CUDA)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Configure CUDA ("native" targets the installed GPU; needs CMake 3.24+)
-if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
-    set(CMAKE_CUDA_ARCHITECTURES "native")
-endif()
 set(CMAKE_CUDA_STANDARD 17)
 
 # Include directories

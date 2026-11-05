@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 476" width="900" height="476" role="img" aria-label="On tinyllama-15M, BareMetal generates 852 tokens per second and PyTorch 303, with identical tokens. On the matrix multiply kernel, PyTorch reaches 39,664 GFLOP/s and BareMetal 4,944 at size 4,096." font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<rect x="0.5" y="0.5" width="899" height="475" rx="8" fill="#fcfcfb" stroke="#e1e0d9"/>
+<text x="28.0" y="46.0" font-size="23" fill="#0b0b0b" text-anchor="start" font-weight="600">2.8× the token rate of PyTorch on a small Llama model</text>
+<text x="28.0" y="70.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="400">tinyllama-15M, greedy generation on one RTX 5080, median of 40 runs per engine</text>
+<rect x="28" y="94" width="16" height="4" rx="2" fill="#2a78d6"/>
+<text x="50.0" y="100.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">BareMetal</text>
+<rect x="130" y="94" width="16" height="4" rx="2" fill="#eb6834"/>
+<text x="152.0" y="100.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">PyTorch with Hugging Face transformers</text>
+<text x="28.0" y="138.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="600">Token generation</text>
+<text x="28.0" y="158.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">Tokens per second, 100 tokens, one at a time</text>
+<line x1="28.0" x2="28.0" y1="182" y2="318" stroke="#c3c2b7"/>
+<text x="28.0" y="336.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">0</text>
+<line x1="113.0" x2="113.0" y1="182" y2="318" stroke="#e1e0d9"/>
+<text x="113.0" y="336.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">250</text>
+<line x1="198.0" x2="198.0" y1="182" y2="318" stroke="#e1e0d9"/>
+<text x="198.0" y="336.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">500</text>
+<line x1="283.0" x2="283.0" y1="182" y2="318" stroke="#e1e0d9"/>
+<text x="283.0" y="336.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">750</text>
+<line x1="368.0" x2="368.0" y1="182" y2="318" stroke="#e1e0d9"/>
+<text x="368.0" y="336.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">1,000</text>
+<rect x="29" y="182" width="338" height="20" fill="#fcfcfb"/>
+<text x="34.0" y="198.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="500">BareMetal</text>
+<path fill="#2a78d6" d="M28.0 204H313.8Q317.8 204 317.8 208V224Q317.8 228 313.8 228H28.0Z"/>
+<text x="325.8" y="221.0" font-size="15" fill="#0b0b0b" text-anchor="start" font-weight="600">852</text>
+<text x="104.0" y="198.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">1.17 ms per token</text>
+<rect x="29" y="250" width="338" height="20" fill="#fcfcfb"/>
+<text x="34.0" y="266.0" font-size="13" fill="#0b0b0b" text-anchor="start" font-weight="500">PyTorch</text>
+<path fill="#eb6834" d="M28.0 272H127.0Q131.0 272 131.0 276V292Q131.0 296 127.0 296H28.0Z"/>
+<text x="139.0" y="289.0" font-size="15" fill="#0b0b0b" text-anchor="start" font-weight="600">303</text>
+<text x="104.0" y="266.0" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">3.30 ms per token</text>
+<text x="28.0" y="382.0" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="600">100 of 100</text>
+<text x="28.0" y="402.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">generated tokens identical</text>
+<text x="228.0" y="382.0" font-size="24" fill="#0b0b0b" text-anchor="start" font-weight="600">0.00005</text>
+<text x="228.0" y="402.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">largest logit difference</text>
+<text x="476.0" y="138.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="600">Matrix multiply kernel</text>
+<text x="476.0" y="158.0" font-size="13" fill="#52514e" text-anchor="start" font-weight="400">GFLOP/s, log scale. PyTorch's cuBLAS is 8.0× faster at 4,096</text>
+<line x1="524" x2="762" y1="366.0" y2="366.0" stroke="#c3c2b7"/>
+<text x="516.0" y="370.0" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">1K</text>
+<line x1="524" x2="762" y1="333.4" y2="333.4" stroke="#e1e0d9"/>
+<text x="516.0" y="337.4" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">2K</text>
+<line x1="524" x2="762" y1="290.3" y2="290.3" stroke="#e1e0d9"/>
+<text x="516.0" y="294.3" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">5K</text>
+<line x1="524" x2="762" y1="257.7" y2="257.7" stroke="#e1e0d9"/>
+<text x="516.0" y="261.7" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">10K</text>
+<line x1="524" x2="762" y1="225.1" y2="225.1" stroke="#e1e0d9"/>
+<text x="516.0" y="229.1" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">20K</text>
+<line x1="524" x2="762" y1="182.0" y2="182.0" stroke="#e1e0d9"/>
+<text x="516.0" y="186.0" font-size="12" fill="#6f6d68" text-anchor="end" font-weight="400">50K</text>
+<text x="524.0" y="384.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">256</text>
+<text x="583.5" y="384.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">512</text>
+<text x="643.0" y="384.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">1,024</text>
+<text x="702.5" y="384.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">2,048</text>
+<text x="762.0" y="384.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">4,096</text>
+<text x="643.0" y="402.0" font-size="12" fill="#6f6d68" text-anchor="middle" font-weight="400">Matrix size n</text>
+<polyline points="524.0,349.5 583.5,267.9 643.0,217.9 702.5,196.6 762.0,192.9" fill="none" stroke="#eb6834" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="524.0,337.5 583.5,302.6 643.0,292.3 702.5,290.7 762.0,290.8" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="524.0" cy="349.5" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="583.5" cy="267.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="643.0" cy="217.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="702.5" cy="196.6" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="762.0" cy="192.9" r="4" fill="#eb6834" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="524.0" cy="337.5" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="583.5" cy="302.6" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="643.0" cy="292.3" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="702.5" cy="290.7" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<circle cx="762.0" cy="290.8" r="4" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="772.0" y="192.9" font-size="14" fill="#0b0b0b" text-anchor="start" font-weight="600">39.7K</text>
+<text x="772.0" y="208.9" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">PyTorch</text>
+<text x="772.0" y="290.8" font-size="14" fill="#0b0b0b" text-anchor="start" font-weight="600">4.9K</text>
+<text x="772.0" y="306.8" font-size="12" fill="#52514e" text-anchor="start" font-weight="400">BareMetal</text>
+<line x1="28" x2="872" y1="426" y2="426" stroke="#e1e0d9"/>
+<text x="28.0" y="448.0" font-size="12" fill="#6f6d68" text-anchor="start" font-weight="400">One small model only. Larger models spend more of each token in matrix multiplies, where PyTorch is faster,</text>
+<text x="28.0" y="464.0" font-size="12" fill="#6f6d68" text-anchor="start" font-weight="400">so this lead may shrink or reverse. Data: benchmarks/results/</text>
+</svg>
