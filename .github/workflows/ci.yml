@@ -34,4 +34,4 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check that the Python scripts compile
-        run: python -m py_compile benchmarks/pytorch_gemm.py benchmarks/pytorch_tokens.py scripts/export_llama.py scripts/plot_benchmarks.py scripts/reference_logits.py
+        run: python -m py_compile benchmarks/pytorch_gemm.py benchmarks/pytorch_tokens.py scripts/animate_benchmarks.py scripts/export_llama.py scripts/plot_benchmarks.py scripts/reference_logits.py
