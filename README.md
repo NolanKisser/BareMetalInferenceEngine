@@ -24,6 +24,29 @@ On `tinyllama-15M`, BareMetal generates tokens 2.8 times as fast as PyTorch with
 
 See [Testing and Benchmarking](#testing-and-benchmarking) to reproduce these numbers.
 
+### How It Improved
+
+The engine used to return all zeros, because only one stage did real work. It now runs a real forward pass.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/anim-trace-dark.svg">
+  <img alt="Animation of one token passing through 12 engine stages. Before, 1 stage did real work and logits were all zeros. After, 11 do, logits match Hugging Face, and 28 of 28 kernel checks pass. The tokenizer is still a placeholder." src="docs/anim-trace-light.svg">
+</picture>
+
+Those zeros meant that every word tied, so the old engine had no prediction to make. It now gives the same probabilities as Hugging Face.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/anim-predict-dark.svg">
+  <img alt="Animation of next-word predictions. Before, all logits were zero, so every word tied. After, the model continues there was a little with girl at 64.0 percent." src="docs/anim-predict-light.svg">
+</picture>
+
+Here is the output of both engines, slowed 40 times so you can follow it.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/anim-race-dark.svg">
+  <img alt="Animation of both engines generating the same story, slowed 40 times. BareMetal finishes 100 tokens in 117 milliseconds and PyTorch in 330." src="docs/anim-race-light.svg">
+</picture>
+
 ## Project Structure
 
 The project builds 3 distinct executable targets:
@@ -156,6 +179,12 @@ python scripts/plot_benchmarks.py
 ```
 
 The script stops if the engines generated different tokens or the results came from different GPUs.
+
+To redraw the animations, also save the output of `kernel_tests` as `benchmarks/results/kernel_tests.txt`, and run:
+
+```bash
+python scripts/animate_benchmarks.py
+```
 
 ### 4. Run the API Server
 

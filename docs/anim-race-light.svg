@@ -1,0 +1,495 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 364" width="900" height="364" role="img" aria-label="Animation of both engines generating the same story, slowed 40 times. BareMetal finishes 100 tokens in 117 milliseconds and PyTorch in 330." font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<style>@keyframes a0{0%,2.96%{transform:scaleX(0)}30.73%,97.04%{transform:scaleX(1)}100%{transform:scaleX(1)}}.a0{animation:a0 16.897605998720973s linear infinite}
+@keyframes a1{0%,2.96%{opacity:0}2.97%,4.34%{opacity:1}4.35%,100%{opacity:0}}.a1{animation:a1 16.897605998720973s linear infinite}
+@keyframes a2{0%,4.35%{opacity:0}4.36%,5.73%{opacity:1}5.74%,100%{opacity:0}}.a2{animation:a2 16.897605998720973s linear infinite}
+@keyframes a3{0%,5.74%{opacity:0}5.75%,7.11%{opacity:1}7.12%,100%{opacity:0}}.a3{animation:a3 16.897605998720973s linear infinite}
+@keyframes a4{0%,7.12%{opacity:0}7.13%,8.50%{opacity:1}8.51%,100%{opacity:0}}.a4{animation:a4 16.897605998720973s linear infinite}
+@keyframes a5{0%,8.51%{opacity:0}8.52%,9.89%{opacity:1}9.90%,100%{opacity:0}}.a5{animation:a5 16.897605998720973s linear infinite}
+@keyframes a6{0%,9.90%{opacity:0}9.91%,11.28%{opacity:1}11.29%,100%{opacity:0}}.a6{animation:a6 16.897605998720973s linear infinite}
+@keyframes a7{0%,11.29%{opacity:0}11.30%,12.67%{opacity:1}12.68%,100%{opacity:0}}.a7{animation:a7 16.897605998720973s linear infinite}
+@keyframes a8{0%,12.68%{opacity:0}12.69%,14.06%{opacity:1}14.07%,100%{opacity:0}}.a8{animation:a8 16.897605998720973s linear infinite}
+@keyframes a9{0%,14.07%{opacity:0}14.08%,15.45%{opacity:1}15.46%,100%{opacity:0}}.a9{animation:a9 16.897605998720973s linear infinite}
+@keyframes a10{0%,15.46%{opacity:0}15.47%,16.83%{opacity:1}16.84%,100%{opacity:0}}.a10{animation:a10 16.897605998720973s linear infinite}
+@keyframes a11{0%,16.84%{opacity:0}16.85%,18.22%{opacity:1}18.23%,100%{opacity:0}}.a11{animation:a11 16.897605998720973s linear infinite}
+@keyframes a12{0%,18.23%{opacity:0}18.24%,19.61%{opacity:1}19.62%,100%{opacity:0}}.a12{animation:a12 16.897605998720973s linear infinite}
+@keyframes a13{0%,19.62%{opacity:0}19.63%,21.00%{opacity:1}21.01%,100%{opacity:0}}.a13{animation:a13 16.897605998720973s linear infinite}
+@keyframes a14{0%,21.01%{opacity:0}21.02%,22.39%{opacity:1}22.40%,100%{opacity:0}}.a14{animation:a14 16.897605998720973s linear infinite}
+@keyframes a15{0%,22.40%{opacity:0}22.41%,23.78%{opacity:1}23.79%,100%{opacity:0}}.a15{animation:a15 16.897605998720973s linear infinite}
+@keyframes a16{0%,23.79%{opacity:0}23.80%,25.17%{opacity:1}25.18%,100%{opacity:0}}.a16{animation:a16 16.897605998720973s linear infinite}
+@keyframes a17{0%,25.18%{opacity:0}25.19%,26.55%{opacity:1}26.56%,100%{opacity:0}}.a17{animation:a17 16.897605998720973s linear infinite}
+@keyframes a18{0%,26.56%{opacity:0}26.57%,27.94%{opacity:1}27.95%,100%{opacity:0}}.a18{animation:a18 16.897605998720973s linear infinite}
+@keyframes a19{0%,27.95%{opacity:0}27.96%,29.33%{opacity:1}29.34%,100%{opacity:0}}.a19{animation:a19 16.897605998720973s linear infinite}
+@keyframes a20{0%,29.34%{opacity:0}29.35%,30.72%{opacity:1}30.73%,100%{opacity:0}}.a20{animation:a20 16.897605998720973s linear infinite}
+@keyframes a21{0%,30.73%{opacity:0}30.74%,97.04%{opacity:1}100%{opacity:0}}.a21{animation:a21 16.897605998720973s linear infinite}
+@keyframes a22{0%,3.24%{opacity:0}3.25%,97.04%{opacity:1}100%{opacity:0}}.a22{animation:a22 16.897605998720973s linear infinite}
+@keyframes a23{0%,3.51%{opacity:0}3.52%,97.04%{opacity:1}100%{opacity:0}}.a23{animation:a23 16.897605998720973s linear infinite}
+@keyframes a24{0%,3.79%{opacity:0}3.80%,97.04%{opacity:1}100%{opacity:0}}.a24{animation:a24 16.897605998720973s linear infinite}
+@keyframes a25{0%,4.07%{opacity:0}4.08%,97.04%{opacity:1}100%{opacity:0}}.a25{animation:a25 16.897605998720973s linear infinite}
+@keyframes a26{0%,4.35%{opacity:0}4.36%,97.04%{opacity:1}100%{opacity:0}}.a26{animation:a26 16.897605998720973s linear infinite}
+@keyframes a27{0%,4.63%{opacity:0}4.64%,97.04%{opacity:1}100%{opacity:0}}.a27{animation:a27 16.897605998720973s linear infinite}
+@keyframes a28{0%,4.90%{opacity:0}4.91%,97.04%{opacity:1}100%{opacity:0}}.a28{animation:a28 16.897605998720973s linear infinite}
+@keyframes a29{0%,5.18%{opacity:0}5.19%,97.04%{opacity:1}100%{opacity:0}}.a29{animation:a29 16.897605998720973s linear infinite}
+@keyframes a30{0%,5.46%{opacity:0}5.47%,97.04%{opacity:1}100%{opacity:0}}.a30{animation:a30 16.897605998720973s linear infinite}
+@keyframes a31{0%,5.74%{opacity:0}5.75%,97.04%{opacity:1}100%{opacity:0}}.a31{animation:a31 16.897605998720973s linear infinite}
+@keyframes a32{0%,6.01%{opacity:0}6.02%,97.04%{opacity:1}100%{opacity:0}}.a32{animation:a32 16.897605998720973s linear infinite}
+@keyframes a33{0%,6.29%{opacity:0}6.30%,97.04%{opacity:1}100%{opacity:0}}.a33{animation:a33 16.897605998720973s linear infinite}
+@keyframes a34{0%,6.57%{opacity:0}6.58%,97.04%{opacity:1}100%{opacity:0}}.a34{animation:a34 16.897605998720973s linear infinite}
+@keyframes a35{0%,6.85%{opacity:0}6.86%,97.04%{opacity:1}100%{opacity:0}}.a35{animation:a35 16.897605998720973s linear infinite}
+@keyframes a36{0%,7.12%{opacity:0}7.13%,97.04%{opacity:1}100%{opacity:0}}.a36{animation:a36 16.897605998720973s linear infinite}
+@keyframes a37{0%,7.40%{opacity:0}7.41%,97.04%{opacity:1}100%{opacity:0}}.a37{animation:a37 16.897605998720973s linear infinite}
+@keyframes a38{0%,7.68%{opacity:0}7.69%,97.04%{opacity:1}100%{opacity:0}}.a38{animation:a38 16.897605998720973s linear infinite}
+@keyframes a39{0%,7.96%{opacity:0}7.97%,97.04%{opacity:1}100%{opacity:0}}.a39{animation:a39 16.897605998720973s linear infinite}
+@keyframes a40{0%,8.24%{opacity:0}8.25%,97.04%{opacity:1}100%{opacity:0}}.a40{animation:a40 16.897605998720973s linear infinite}
+@keyframes a41{0%,8.51%{opacity:0}8.52%,97.04%{opacity:1}100%{opacity:0}}.a41{animation:a41 16.897605998720973s linear infinite}
+@keyframes a42{0%,8.79%{opacity:0}8.80%,97.04%{opacity:1}100%{opacity:0}}.a42{animation:a42 16.897605998720973s linear infinite}
+@keyframes a43{0%,9.07%{opacity:0}9.08%,97.04%{opacity:1}100%{opacity:0}}.a43{animation:a43 16.897605998720973s linear infinite}
+@keyframes a44{0%,9.35%{opacity:0}9.36%,97.04%{opacity:1}100%{opacity:0}}.a44{animation:a44 16.897605998720973s linear infinite}
+@keyframes a45{0%,9.62%{opacity:0}9.63%,97.04%{opacity:1}100%{opacity:0}}.a45{animation:a45 16.897605998720973s linear infinite}
+@keyframes a46{0%,9.90%{opacity:0}9.91%,97.04%{opacity:1}100%{opacity:0}}.a46{animation:a46 16.897605998720973s linear infinite}
+@keyframes a47{0%,10.18%{opacity:0}10.19%,97.04%{opacity:1}100%{opacity:0}}.a47{animation:a47 16.897605998720973s linear infinite}
+@keyframes a48{0%,10.46%{opacity:0}10.47%,97.04%{opacity:1}100%{opacity:0}}.a48{animation:a48 16.897605998720973s linear infinite}
+@keyframes a49{0%,10.73%{opacity:0}10.74%,97.04%{opacity:1}100%{opacity:0}}.a49{animation:a49 16.897605998720973s linear infinite}
+@keyframes a50{0%,11.01%{opacity:0}11.02%,97.04%{opacity:1}100%{opacity:0}}.a50{animation:a50 16.897605998720973s linear infinite}
+@keyframes a51{0%,11.29%{opacity:0}11.30%,97.04%{opacity:1}100%{opacity:0}}.a51{animation:a51 16.897605998720973s linear infinite}
+@keyframes a52{0%,11.57%{opacity:0}11.58%,97.04%{opacity:1}100%{opacity:0}}.a52{animation:a52 16.897605998720973s linear infinite}
+@keyframes a53{0%,11.85%{opacity:0}11.86%,97.04%{opacity:1}100%{opacity:0}}.a53{animation:a53 16.897605998720973s linear infinite}
+@keyframes a54{0%,12.12%{opacity:0}12.13%,97.04%{opacity:1}100%{opacity:0}}.a54{animation:a54 16.897605998720973s linear infinite}
+@keyframes a55{0%,12.40%{opacity:0}12.41%,97.04%{opacity:1}100%{opacity:0}}.a55{animation:a55 16.897605998720973s linear infinite}
+@keyframes a56{0%,12.68%{opacity:0}12.69%,97.04%{opacity:1}100%{opacity:0}}.a56{animation:a56 16.897605998720973s linear infinite}
+@keyframes a57{0%,12.96%{opacity:0}12.97%,97.04%{opacity:1}100%{opacity:0}}.a57{animation:a57 16.897605998720973s linear infinite}
+@keyframes a58{0%,13.23%{opacity:0}13.24%,97.04%{opacity:1}100%{opacity:0}}.a58{animation:a58 16.897605998720973s linear infinite}
+@keyframes a59{0%,13.51%{opacity:0}13.52%,97.04%{opacity:1}100%{opacity:0}}.a59{animation:a59 16.897605998720973s linear infinite}
+@keyframes a60{0%,13.79%{opacity:0}13.80%,97.04%{opacity:1}100%{opacity:0}}.a60{animation:a60 16.897605998720973s linear infinite}
+@keyframes a61{0%,14.07%{opacity:0}14.08%,97.04%{opacity:1}100%{opacity:0}}.a61{animation:a61 16.897605998720973s linear infinite}
+@keyframes a62{0%,14.34%{opacity:0}14.35%,97.04%{opacity:1}100%{opacity:0}}.a62{animation:a62 16.897605998720973s linear infinite}
+@keyframes a63{0%,14.62%{opacity:0}14.63%,97.04%{opacity:1}100%{opacity:0}}.a63{animation:a63 16.897605998720973s linear infinite}
+@keyframes a64{0%,14.90%{opacity:0}14.91%,97.04%{opacity:1}100%{opacity:0}}.a64{animation:a64 16.897605998720973s linear infinite}
+@keyframes a65{0%,15.18%{opacity:0}15.19%,97.04%{opacity:1}100%{opacity:0}}.a65{animation:a65 16.897605998720973s linear infinite}
+@keyframes a66{0%,15.46%{opacity:0}15.47%,97.04%{opacity:1}100%{opacity:0}}.a66{animation:a66 16.897605998720973s linear infinite}
+@keyframes a67{0%,15.73%{opacity:0}15.74%,97.04%{opacity:1}100%{opacity:0}}.a67{animation:a67 16.897605998720973s linear infinite}
+@keyframes a68{0%,16.01%{opacity:0}16.02%,97.04%{opacity:1}100%{opacity:0}}.a68{animation:a68 16.897605998720973s linear infinite}
+@keyframes a69{0%,16.29%{opacity:0}16.30%,97.04%{opacity:1}100%{opacity:0}}.a69{animation:a69 16.897605998720973s linear infinite}
+@keyframes a70{0%,16.57%{opacity:0}16.58%,97.04%{opacity:1}100%{opacity:0}}.a70{animation:a70 16.897605998720973s linear infinite}
+@keyframes a71{0%,16.84%{opacity:0}16.85%,97.04%{opacity:1}100%{opacity:0}}.a71{animation:a71 16.897605998720973s linear infinite}
+@keyframes a72{0%,17.12%{opacity:0}17.13%,97.04%{opacity:1}100%{opacity:0}}.a72{animation:a72 16.897605998720973s linear infinite}
+@keyframes a73{0%,17.68%{opacity:0}17.69%,97.04%{opacity:1}100%{opacity:0}}.a73{animation:a73 16.897605998720973s linear infinite}
+@keyframes a74{0%,17.96%{opacity:0}17.97%,97.04%{opacity:1}100%{opacity:0}}.a74{animation:a74 16.897605998720973s linear infinite}
+@keyframes a75{0%,18.23%{opacity:0}18.24%,97.04%{opacity:1}100%{opacity:0}}.a75{animation:a75 16.897605998720973s linear infinite}
+@keyframes a76{0%,18.51%{opacity:0}18.52%,97.04%{opacity:1}100%{opacity:0}}.a76{animation:a76 16.897605998720973s linear infinite}
+@keyframes a77{0%,18.79%{opacity:0}18.80%,97.04%{opacity:1}100%{opacity:0}}.a77{animation:a77 16.897605998720973s linear infinite}
+@keyframes a78{0%,19.07%{opacity:0}19.08%,97.04%{opacity:1}100%{opacity:0}}.a78{animation:a78 16.897605998720973s linear infinite}
+@keyframes a79{0%,19.34%{opacity:0}19.35%,97.04%{opacity:1}100%{opacity:0}}.a79{animation:a79 16.897605998720973s linear infinite}
+@keyframes a80{0%,19.62%{opacity:0}19.63%,97.04%{opacity:1}100%{opacity:0}}.a80{animation:a80 16.897605998720973s linear infinite}
+@keyframes a81{0%,19.90%{opacity:0}19.91%,97.04%{opacity:1}100%{opacity:0}}.a81{animation:a81 16.897605998720973s linear infinite}
+@keyframes a82{0%,20.18%{opacity:0}20.19%,97.04%{opacity:1}100%{opacity:0}}.a82{animation:a82 16.897605998720973s linear infinite}
+@keyframes a83{0%,20.45%{opacity:0}20.46%,97.04%{opacity:1}100%{opacity:0}}.a83{animation:a83 16.897605998720973s linear infinite}
+@keyframes a84{0%,20.73%{opacity:0}20.74%,97.04%{opacity:1}100%{opacity:0}}.a84{animation:a84 16.897605998720973s linear infinite}
+@keyframes a85{0%,21.01%{opacity:0}21.02%,97.04%{opacity:1}100%{opacity:0}}.a85{animation:a85 16.897605998720973s linear infinite}
+@keyframes a86{0%,21.29%{opacity:0}21.30%,97.04%{opacity:1}100%{opacity:0}}.a86{animation:a86 16.897605998720973s linear infinite}
+@keyframes a87{0%,21.57%{opacity:0}21.58%,97.04%{opacity:1}100%{opacity:0}}.a87{animation:a87 16.897605998720973s linear infinite}
+@keyframes a88{0%,21.84%{opacity:0}21.85%,97.04%{opacity:1}100%{opacity:0}}.a88{animation:a88 16.897605998720973s linear infinite}
+@keyframes a89{0%,22.12%{opacity:0}22.13%,97.04%{opacity:1}100%{opacity:0}}.a89{animation:a89 16.897605998720973s linear infinite}
+@keyframes a90{0%,22.40%{opacity:0}22.41%,97.04%{opacity:1}100%{opacity:0}}.a90{animation:a90 16.897605998720973s linear infinite}
+@keyframes a91{0%,22.68%{opacity:0}22.69%,97.04%{opacity:1}100%{opacity:0}}.a91{animation:a91 16.897605998720973s linear infinite}
+@keyframes a92{0%,22.95%{opacity:0}22.96%,97.04%{opacity:1}100%{opacity:0}}.a92{animation:a92 16.897605998720973s linear infinite}
+@keyframes a93{0%,23.23%{opacity:0}23.24%,97.04%{opacity:1}100%{opacity:0}}.a93{animation:a93 16.897605998720973s linear infinite}
+@keyframes a94{0%,23.51%{opacity:0}23.52%,97.04%{opacity:1}100%{opacity:0}}.a94{animation:a94 16.897605998720973s linear infinite}
+@keyframes a95{0%,23.79%{opacity:0}23.80%,97.04%{opacity:1}100%{opacity:0}}.a95{animation:a95 16.897605998720973s linear infinite}
+@keyframes a96{0%,24.06%{opacity:0}24.07%,97.04%{opacity:1}100%{opacity:0}}.a96{animation:a96 16.897605998720973s linear infinite}
+@keyframes a97{0%,24.34%{opacity:0}24.35%,97.04%{opacity:1}100%{opacity:0}}.a97{animation:a97 16.897605998720973s linear infinite}
+@keyframes a98{0%,24.62%{opacity:0}24.63%,97.04%{opacity:1}100%{opacity:0}}.a98{animation:a98 16.897605998720973s linear infinite}
+@keyframes a99{0%,24.90%{opacity:0}24.91%,97.04%{opacity:1}100%{opacity:0}}.a99{animation:a99 16.897605998720973s linear infinite}
+@keyframes a100{0%,25.18%{opacity:0}25.19%,97.04%{opacity:1}100%{opacity:0}}.a100{animation:a100 16.897605998720973s linear infinite}
+@keyframes a101{0%,25.45%{opacity:0}25.46%,97.04%{opacity:1}100%{opacity:0}}.a101{animation:a101 16.897605998720973s linear infinite}
+@keyframes a102{0%,25.73%{opacity:0}25.74%,97.04%{opacity:1}100%{opacity:0}}.a102{animation:a102 16.897605998720973s linear infinite}
+@keyframes a103{0%,26.01%{opacity:0}26.02%,97.04%{opacity:1}100%{opacity:0}}.a103{animation:a103 16.897605998720973s linear infinite}
+@keyframes a104{0%,26.29%{opacity:0}26.30%,97.04%{opacity:1}100%{opacity:0}}.a104{animation:a104 16.897605998720973s linear infinite}
+@keyframes a105{0%,26.56%{opacity:0}26.57%,97.04%{opacity:1}100%{opacity:0}}.a105{animation:a105 16.897605998720973s linear infinite}
+@keyframes a106{0%,26.84%{opacity:0}26.85%,97.04%{opacity:1}100%{opacity:0}}.a106{animation:a106 16.897605998720973s linear infinite}
+@keyframes a107{0%,27.12%{opacity:0}27.13%,97.04%{opacity:1}100%{opacity:0}}.a107{animation:a107 16.897605998720973s linear infinite}
+@keyframes a108{0%,27.40%{opacity:0}27.41%,97.04%{opacity:1}100%{opacity:0}}.a108{animation:a108 16.897605998720973s linear infinite}
+@keyframes a109{0%,27.67%{opacity:0}27.68%,97.04%{opacity:1}100%{opacity:0}}.a109{animation:a109 16.897605998720973s linear infinite}
+@keyframes a110{0%,27.95%{opacity:0}27.96%,97.04%{opacity:1}100%{opacity:0}}.a110{animation:a110 16.897605998720973s linear infinite}
+@keyframes a111{0%,28.23%{opacity:0}28.24%,97.04%{opacity:1}100%{opacity:0}}.a111{animation:a111 16.897605998720973s linear infinite}
+@keyframes a112{0%,28.51%{opacity:0}28.52%,97.04%{opacity:1}100%{opacity:0}}.a112{animation:a112 16.897605998720973s linear infinite}
+@keyframes a113{0%,28.79%{opacity:0}28.80%,97.04%{opacity:1}100%{opacity:0}}.a113{animation:a113 16.897605998720973s linear infinite}
+@keyframes a114{0%,29.06%{opacity:0}29.07%,97.04%{opacity:1}100%{opacity:0}}.a114{animation:a114 16.897605998720973s linear infinite}
+@keyframes a115{0%,29.34%{opacity:0}29.35%,97.04%{opacity:1}100%{opacity:0}}.a115{animation:a115 16.897605998720973s linear infinite}
+@keyframes a116{0%,29.62%{opacity:0}29.63%,97.04%{opacity:1}100%{opacity:0}}.a116{animation:a116 16.897605998720973s linear infinite}
+@keyframes a117{0%,29.90%{opacity:0}29.91%,97.04%{opacity:1}100%{opacity:0}}.a117{animation:a117 16.897605998720973s linear infinite}
+@keyframes a118{0%,30.17%{opacity:0}30.18%,97.04%{opacity:1}100%{opacity:0}}.a118{animation:a118 16.897605998720973s linear infinite}
+@keyframes a119{0%,30.45%{opacity:0}30.46%,97.04%{opacity:1}100%{opacity:0}}.a119{animation:a119 16.897605998720973s linear infinite}
+@keyframes a120{0%,2.96%{transform:scaleX(0)}81.06%,97.04%{transform:scaleX(1)}100%{transform:scaleX(1)}}.a120{animation:a120 16.897605998720973s linear infinite}
+@keyframes a121{0%,2.96%{opacity:0}2.97%,6.85%{opacity:1}6.86%,100%{opacity:0}}.a121{animation:a121 16.897605998720973s linear infinite}
+@keyframes a122{0%,6.86%{opacity:0}6.87%,10.76%{opacity:1}10.77%,100%{opacity:0}}.a122{animation:a122 16.897605998720973s linear infinite}
+@keyframes a123{0%,10.77%{opacity:0}10.78%,14.66%{opacity:1}14.67%,100%{opacity:0}}.a123{animation:a123 16.897605998720973s linear infinite}
+@keyframes a124{0%,14.67%{opacity:0}14.68%,18.57%{opacity:1}18.58%,100%{opacity:0}}.a124{animation:a124 16.897605998720973s linear infinite}
+@keyframes a125{0%,18.58%{opacity:0}18.59%,22.47%{opacity:1}22.48%,100%{opacity:0}}.a125{animation:a125 16.897605998720973s linear infinite}
+@keyframes a126{0%,22.48%{opacity:0}22.49%,26.38%{opacity:1}26.39%,100%{opacity:0}}.a126{animation:a126 16.897605998720973s linear infinite}
+@keyframes a127{0%,26.39%{opacity:0}26.40%,30.29%{opacity:1}30.30%,100%{opacity:0}}.a127{animation:a127 16.897605998720973s linear infinite}
+@keyframes a128{0%,30.30%{opacity:0}30.31%,34.19%{opacity:1}34.20%,100%{opacity:0}}.a128{animation:a128 16.897605998720973s linear infinite}
+@keyframes a129{0%,34.20%{opacity:0}34.21%,38.10%{opacity:1}38.11%,100%{opacity:0}}.a129{animation:a129 16.897605998720973s linear infinite}
+@keyframes a130{0%,38.11%{opacity:0}38.12%,42.00%{opacity:1}42.01%,100%{opacity:0}}.a130{animation:a130 16.897605998720973s linear infinite}
+@keyframes a131{0%,42.01%{opacity:0}42.02%,45.91%{opacity:1}45.92%,100%{opacity:0}}.a131{animation:a131 16.897605998720973s linear infinite}
+@keyframes a132{0%,45.92%{opacity:0}45.93%,49.81%{opacity:1}49.82%,100%{opacity:0}}.a132{animation:a132 16.897605998720973s linear infinite}
+@keyframes a133{0%,49.82%{opacity:0}49.83%,53.72%{opacity:1}53.73%,100%{opacity:0}}.a133{animation:a133 16.897605998720973s linear infinite}
+@keyframes a134{0%,53.73%{opacity:0}53.74%,57.62%{opacity:1}57.63%,100%{opacity:0}}.a134{animation:a134 16.897605998720973s linear infinite}
+@keyframes a135{0%,57.63%{opacity:0}57.64%,61.53%{opacity:1}61.54%,100%{opacity:0}}.a135{animation:a135 16.897605998720973s linear infinite}
+@keyframes a136{0%,61.54%{opacity:0}61.55%,65.43%{opacity:1}65.44%,100%{opacity:0}}.a136{animation:a136 16.897605998720973s linear infinite}
+@keyframes a137{0%,65.44%{opacity:0}65.45%,69.34%{opacity:1}69.35%,100%{opacity:0}}.a137{animation:a137 16.897605998720973s linear infinite}
+@keyframes a138{0%,69.35%{opacity:0}69.36%,73.24%{opacity:1}73.25%,100%{opacity:0}}.a138{animation:a138 16.897605998720973s linear infinite}
+@keyframes a139{0%,73.25%{opacity:0}73.26%,77.15%{opacity:1}77.16%,100%{opacity:0}}.a139{animation:a139 16.897605998720973s linear infinite}
+@keyframes a140{0%,77.16%{opacity:0}77.17%,81.05%{opacity:1}81.06%,100%{opacity:0}}.a140{animation:a140 16.897605998720973s linear infinite}
+@keyframes a141{0%,81.06%{opacity:0}81.07%,97.04%{opacity:1}100%{opacity:0}}.a141{animation:a141 16.897605998720973s linear infinite}
+@keyframes a142{0%,3.74%{opacity:0}3.75%,97.04%{opacity:1}100%{opacity:0}}.a142{animation:a142 16.897605998720973s linear infinite}
+@keyframes a143{0%,4.52%{opacity:0}4.53%,97.04%{opacity:1}100%{opacity:0}}.a143{animation:a143 16.897605998720973s linear infinite}
+@keyframes a144{0%,5.30%{opacity:0}5.31%,97.04%{opacity:1}100%{opacity:0}}.a144{animation:a144 16.897605998720973s linear infinite}
+@keyframes a145{0%,6.08%{opacity:0}6.09%,97.04%{opacity:1}100%{opacity:0}}.a145{animation:a145 16.897605998720973s linear infinite}
+@keyframes a146{0%,6.86%{opacity:0}6.87%,97.04%{opacity:1}100%{opacity:0}}.a146{animation:a146 16.897605998720973s linear infinite}
+@keyframes a147{0%,7.65%{opacity:0}7.66%,97.04%{opacity:1}100%{opacity:0}}.a147{animation:a147 16.897605998720973s linear infinite}
+@keyframes a148{0%,8.43%{opacity:0}8.44%,97.04%{opacity:1}100%{opacity:0}}.a148{animation:a148 16.897605998720973s linear infinite}
+@keyframes a149{0%,9.21%{opacity:0}9.22%,97.04%{opacity:1}100%{opacity:0}}.a149{animation:a149 16.897605998720973s linear infinite}
+@keyframes a150{0%,9.99%{opacity:0}10.00%,97.04%{opacity:1}100%{opacity:0}}.a150{animation:a150 16.897605998720973s linear infinite}
+@keyframes a151{0%,10.77%{opacity:0}10.78%,97.04%{opacity:1}100%{opacity:0}}.a151{animation:a151 16.897605998720973s linear infinite}
+@keyframes a152{0%,11.55%{opacity:0}11.56%,97.04%{opacity:1}100%{opacity:0}}.a152{animation:a152 16.897605998720973s linear infinite}
+@keyframes a153{0%,12.33%{opacity:0}12.34%,97.04%{opacity:1}100%{opacity:0}}.a153{animation:a153 16.897605998720973s linear infinite}
+@keyframes a154{0%,13.11%{opacity:0}13.12%,97.04%{opacity:1}100%{opacity:0}}.a154{animation:a154 16.897605998720973s linear infinite}
+@keyframes a155{0%,13.89%{opacity:0}13.90%,97.04%{opacity:1}100%{opacity:0}}.a155{animation:a155 16.897605998720973s linear infinite}
+@keyframes a156{0%,14.67%{opacity:0}14.68%,97.04%{opacity:1}100%{opacity:0}}.a156{animation:a156 16.897605998720973s linear infinite}
+@keyframes a157{0%,16.24%{opacity:0}16.25%,97.04%{opacity:1}100%{opacity:0}}.a157{animation:a157 16.897605998720973s linear infinite}
+@keyframes a158{0%,17.02%{opacity:0}17.03%,97.04%{opacity:1}100%{opacity:0}}.a158{animation:a158 16.897605998720973s linear infinite}
+@keyframes a159{0%,17.80%{opacity:0}17.81%,97.04%{opacity:1}100%{opacity:0}}.a159{animation:a159 16.897605998720973s linear infinite}
+@keyframes a160{0%,18.58%{opacity:0}18.59%,97.04%{opacity:1}100%{opacity:0}}.a160{animation:a160 16.897605998720973s linear infinite}
+@keyframes a161{0%,19.36%{opacity:0}19.37%,97.04%{opacity:1}100%{opacity:0}}.a161{animation:a161 16.897605998720973s linear infinite}
+@keyframes a162{0%,20.14%{opacity:0}20.15%,97.04%{opacity:1}100%{opacity:0}}.a162{animation:a162 16.897605998720973s linear infinite}
+@keyframes a163{0%,20.92%{opacity:0}20.93%,97.04%{opacity:1}100%{opacity:0}}.a163{animation:a163 16.897605998720973s linear infinite}
+@keyframes a164{0%,21.70%{opacity:0}21.71%,97.04%{opacity:1}100%{opacity:0}}.a164{animation:a164 16.897605998720973s linear infinite}
+@keyframes a165{0%,22.48%{opacity:0}22.49%,97.04%{opacity:1}100%{opacity:0}}.a165{animation:a165 16.897605998720973s linear infinite}
+@keyframes a166{0%,23.27%{opacity:0}23.28%,97.04%{opacity:1}100%{opacity:0}}.a166{animation:a166 16.897605998720973s linear infinite}
+@keyframes a167{0%,24.05%{opacity:0}24.06%,97.04%{opacity:1}100%{opacity:0}}.a167{animation:a167 16.897605998720973s linear infinite}
+@keyframes a168{0%,24.83%{opacity:0}24.84%,97.04%{opacity:1}100%{opacity:0}}.a168{animation:a168 16.897605998720973s linear infinite}
+@keyframes a169{0%,25.61%{opacity:0}25.62%,97.04%{opacity:1}100%{opacity:0}}.a169{animation:a169 16.897605998720973s linear infinite}
+@keyframes a170{0%,26.39%{opacity:0}26.40%,97.04%{opacity:1}100%{opacity:0}}.a170{animation:a170 16.897605998720973s linear infinite}
+@keyframes a171{0%,27.17%{opacity:0}27.18%,97.04%{opacity:1}100%{opacity:0}}.a171{animation:a171 16.897605998720973s linear infinite}
+@keyframes a172{0%,28.73%{opacity:0}28.74%,97.04%{opacity:1}100%{opacity:0}}.a172{animation:a172 16.897605998720973s linear infinite}
+@keyframes a173{0%,29.51%{opacity:0}29.52%,97.04%{opacity:1}100%{opacity:0}}.a173{animation:a173 16.897605998720973s linear infinite}
+@keyframes a174{0%,30.30%{opacity:0}30.31%,97.04%{opacity:1}100%{opacity:0}}.a174{animation:a174 16.897605998720973s linear infinite}
+@keyframes a175{0%,31.08%{opacity:0}31.09%,97.04%{opacity:1}100%{opacity:0}}.a175{animation:a175 16.897605998720973s linear infinite}
+@keyframes a176{0%,31.86%{opacity:0}31.87%,97.04%{opacity:1}100%{opacity:0}}.a176{animation:a176 16.897605998720973s linear infinite}
+@keyframes a177{0%,32.64%{opacity:0}32.65%,97.04%{opacity:1}100%{opacity:0}}.a177{animation:a177 16.897605998720973s linear infinite}
+@keyframes a178{0%,33.42%{opacity:0}33.43%,97.04%{opacity:1}100%{opacity:0}}.a178{animation:a178 16.897605998720973s linear infinite}
+@keyframes a179{0%,34.20%{opacity:0}34.21%,97.04%{opacity:1}100%{opacity:0}}.a179{animation:a179 16.897605998720973s linear infinite}
+@keyframes a180{0%,34.98%{opacity:0}34.99%,97.04%{opacity:1}100%{opacity:0}}.a180{animation:a180 16.897605998720973s linear infinite}
+@keyframes a181{0%,35.76%{opacity:0}35.77%,97.04%{opacity:1}100%{opacity:0}}.a181{animation:a181 16.897605998720973s linear infinite}
+@keyframes a182{0%,36.54%{opacity:0}36.55%,97.04%{opacity:1}100%{opacity:0}}.a182{animation:a182 16.897605998720973s linear infinite}
+@keyframes a183{0%,37.32%{opacity:0}37.33%,97.04%{opacity:1}100%{opacity:0}}.a183{animation:a183 16.897605998720973s linear infinite}
+@keyframes a184{0%,38.11%{opacity:0}38.12%,97.04%{opacity:1}100%{opacity:0}}.a184{animation:a184 16.897605998720973s linear infinite}
+@keyframes a185{0%,38.89%{opacity:0}38.90%,97.04%{opacity:1}100%{opacity:0}}.a185{animation:a185 16.897605998720973s linear infinite}
+@keyframes a186{0%,39.67%{opacity:0}39.68%,97.04%{opacity:1}100%{opacity:0}}.a186{animation:a186 16.897605998720973s linear infinite}
+@keyframes a187{0%,40.45%{opacity:0}40.46%,97.04%{opacity:1}100%{opacity:0}}.a187{animation:a187 16.897605998720973s linear infinite}
+@keyframes a188{0%,41.23%{opacity:0}41.24%,97.04%{opacity:1}100%{opacity:0}}.a188{animation:a188 16.897605998720973s linear infinite}
+@keyframes a189{0%,42.01%{opacity:0}42.02%,97.04%{opacity:1}100%{opacity:0}}.a189{animation:a189 16.897605998720973s linear infinite}
+@keyframes a190{0%,42.79%{opacity:0}42.80%,97.04%{opacity:1}100%{opacity:0}}.a190{animation:a190 16.897605998720973s linear infinite}
+@keyframes a191{0%,44.35%{opacity:0}44.36%,97.04%{opacity:1}100%{opacity:0}}.a191{animation:a191 16.897605998720973s linear infinite}
+@keyframes a192{0%,45.13%{opacity:0}45.14%,97.04%{opacity:1}100%{opacity:0}}.a192{animation:a192 16.897605998720973s linear infinite}
+@keyframes a193{0%,45.92%{opacity:0}45.93%,97.04%{opacity:1}100%{opacity:0}}.a193{animation:a193 16.897605998720973s linear infinite}
+@keyframes a194{0%,46.70%{opacity:0}46.71%,97.04%{opacity:1}100%{opacity:0}}.a194{animation:a194 16.897605998720973s linear infinite}
+@keyframes a195{0%,47.48%{opacity:0}47.49%,97.04%{opacity:1}100%{opacity:0}}.a195{animation:a195 16.897605998720973s linear infinite}
+@keyframes a196{0%,48.26%{opacity:0}48.27%,97.04%{opacity:1}100%{opacity:0}}.a196{animation:a196 16.897605998720973s linear infinite}
+@keyframes a197{0%,49.04%{opacity:0}49.05%,97.04%{opacity:1}100%{opacity:0}}.a197{animation:a197 16.897605998720973s linear infinite}
+@keyframes a198{0%,49.82%{opacity:0}49.83%,97.04%{opacity:1}100%{opacity:0}}.a198{animation:a198 16.897605998720973s linear infinite}
+@keyframes a199{0%,50.60%{opacity:0}50.61%,97.04%{opacity:1}100%{opacity:0}}.a199{animation:a199 16.897605998720973s linear infinite}
+@keyframes a200{0%,51.38%{opacity:0}51.39%,97.04%{opacity:1}100%{opacity:0}}.a200{animation:a200 16.897605998720973s linear infinite}
+@keyframes a201{0%,52.16%{opacity:0}52.17%,97.04%{opacity:1}100%{opacity:0}}.a201{animation:a201 16.897605998720973s linear infinite}
+@keyframes a202{0%,52.95%{opacity:0}52.96%,97.04%{opacity:1}100%{opacity:0}}.a202{animation:a202 16.897605998720973s linear infinite}
+@keyframes a203{0%,53.73%{opacity:0}53.74%,97.04%{opacity:1}100%{opacity:0}}.a203{animation:a203 16.897605998720973s linear infinite}
+@keyframes a204{0%,54.51%{opacity:0}54.52%,97.04%{opacity:1}100%{opacity:0}}.a204{animation:a204 16.897605998720973s linear infinite}
+@keyframes a205{0%,55.29%{opacity:0}55.30%,97.04%{opacity:1}100%{opacity:0}}.a205{animation:a205 16.897605998720973s linear infinite}
+@keyframes a206{0%,56.07%{opacity:0}56.08%,97.04%{opacity:1}100%{opacity:0}}.a206{animation:a206 16.897605998720973s linear infinite}
+@keyframes a207{0%,56.85%{opacity:0}56.86%,97.04%{opacity:1}100%{opacity:0}}.a207{animation:a207 16.897605998720973s linear infinite}
+@keyframes a208{0%,57.63%{opacity:0}57.64%,97.04%{opacity:1}100%{opacity:0}}.a208{animation:a208 16.897605998720973s linear infinite}
+@keyframes a209{0%,58.41%{opacity:0}58.42%,97.04%{opacity:1}100%{opacity:0}}.a209{animation:a209 16.897605998720973s linear infinite}
+@keyframes a210{0%,59.19%{opacity:0}59.20%,97.04%{opacity:1}100%{opacity:0}}.a210{animation:a210 16.897605998720973s linear infinite}
+@keyframes a211{0%,59.97%{opacity:0}59.98%,97.04%{opacity:1}100%{opacity:0}}.a211{animation:a211 16.897605998720973s linear infinite}
+@keyframes a212{0%,60.76%{opacity:0}60.77%,97.04%{opacity:1}100%{opacity:0}}.a212{animation:a212 16.897605998720973s linear infinite}
+@keyframes a213{0%,61.54%{opacity:0}61.55%,97.04%{opacity:1}100%{opacity:0}}.a213{animation:a213 16.897605998720973s linear infinite}
+@keyframes a214{0%,62.32%{opacity:0}62.33%,97.04%{opacity:1}100%{opacity:0}}.a214{animation:a214 16.897605998720973s linear infinite}
+@keyframes a215{0%,63.10%{opacity:0}63.11%,97.04%{opacity:1}100%{opacity:0}}.a215{animation:a215 16.897605998720973s linear infinite}
+@keyframes a216{0%,63.88%{opacity:0}63.89%,97.04%{opacity:1}100%{opacity:0}}.a216{animation:a216 16.897605998720973s linear infinite}
+@keyframes a217{0%,64.66%{opacity:0}64.67%,97.04%{opacity:1}100%{opacity:0}}.a217{animation:a217 16.897605998720973s linear infinite}
+@keyframes a218{0%,65.44%{opacity:0}65.45%,97.04%{opacity:1}100%{opacity:0}}.a218{animation:a218 16.897605998720973s linear infinite}
+@keyframes a219{0%,66.22%{opacity:0}66.23%,97.04%{opacity:1}100%{opacity:0}}.a219{animation:a219 16.897605998720973s linear infinite}
+@keyframes a220{0%,67.00%{opacity:0}67.01%,97.04%{opacity:1}100%{opacity:0}}.a220{animation:a220 16.897605998720973s linear infinite}
+@keyframes a221{0%,67.78%{opacity:0}67.79%,97.04%{opacity:1}100%{opacity:0}}.a221{animation:a221 16.897605998720973s linear infinite}
+@keyframes a222{0%,68.57%{opacity:0}68.58%,97.04%{opacity:1}100%{opacity:0}}.a222{animation:a222 16.897605998720973s linear infinite}
+@keyframes a223{0%,69.35%{opacity:0}69.36%,97.04%{opacity:1}100%{opacity:0}}.a223{animation:a223 16.897605998720973s linear infinite}
+@keyframes a224{0%,70.13%{opacity:0}70.14%,97.04%{opacity:1}100%{opacity:0}}.a224{animation:a224 16.897605998720973s linear infinite}
+@keyframes a225{0%,70.91%{opacity:0}70.92%,97.04%{opacity:1}100%{opacity:0}}.a225{animation:a225 16.897605998720973s linear infinite}
+@keyframes a226{0%,71.69%{opacity:0}71.70%,97.04%{opacity:1}100%{opacity:0}}.a226{animation:a226 16.897605998720973s linear infinite}
+@keyframes a227{0%,72.47%{opacity:0}72.48%,97.04%{opacity:1}100%{opacity:0}}.a227{animation:a227 16.897605998720973s linear infinite}
+@keyframes a228{0%,73.25%{opacity:0}73.26%,97.04%{opacity:1}100%{opacity:0}}.a228{animation:a228 16.897605998720973s linear infinite}
+@keyframes a229{0%,74.03%{opacity:0}74.04%,97.04%{opacity:1}100%{opacity:0}}.a229{animation:a229 16.897605998720973s linear infinite}
+@keyframes a230{0%,74.81%{opacity:0}74.82%,97.04%{opacity:1}100%{opacity:0}}.a230{animation:a230 16.897605998720973s linear infinite}
+@keyframes a231{0%,75.60%{opacity:0}75.61%,97.04%{opacity:1}100%{opacity:0}}.a231{animation:a231 16.897605998720973s linear infinite}
+@keyframes a232{0%,76.38%{opacity:0}76.39%,97.04%{opacity:1}100%{opacity:0}}.a232{animation:a232 16.897605998720973s linear infinite}
+@keyframes a233{0%,77.16%{opacity:0}77.17%,97.04%{opacity:1}100%{opacity:0}}.a233{animation:a233 16.897605998720973s linear infinite}
+@keyframes a234{0%,77.94%{opacity:0}77.95%,97.04%{opacity:1}100%{opacity:0}}.a234{animation:a234 16.897605998720973s linear infinite}
+@keyframes a235{0%,78.72%{opacity:0}78.73%,97.04%{opacity:1}100%{opacity:0}}.a235{animation:a235 16.897605998720973s linear infinite}
+@keyframes a236{0%,79.50%{opacity:0}79.51%,97.04%{opacity:1}100%{opacity:0}}.a236{animation:a236 16.897605998720973s linear infinite}
+@keyframes a237{0%,80.28%{opacity:0}80.29%,97.04%{opacity:1}100%{opacity:0}}.a237{animation:a237 16.897605998720973s linear infinite}
+.grow{transform-box:fill-box;transform-origin:0 50%}
+.hide{opacity:0}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<rect x="0.5" y="0.5" width="899" height="363" rx="8" fill="#fcfcfb" stroke="#e1e0d9"/>
+<text x="28.0" y="46.0" font-size="23" fill="#0b0b0b" text-anchor="start" font-weight="600">The same story, 2.8× as fast</text>
+<text x="28.0" y="70.0" font-size="14" fill="#52514e" text-anchor="start" font-weight="400">Both engines generate the same 100 tokens. Slowed 40× so you can watch.</text>
+<text x="28.0" y="106.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="600">BareMetal</text>
+<rect x="28" y="118" width="400" height="6" rx="3" fill="#e1e0d9"/>
+<rect class="grow a0" x="28" y="118" width="400" height="6" rx="3" fill="#2a78d6"/>
+<g class="hide a1"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">0 tokens · 0 ms</text></g>
+<g class="hide a2"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">5 tokens · 6 ms</text></g>
+<g class="hide a3"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">10 tokens · 12 ms</text></g>
+<g class="hide a4"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">15 tokens · 18 ms</text></g>
+<g class="hide a5"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">20 tokens · 23 ms</text></g>
+<g class="hide a6"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">25 tokens · 29 ms</text></g>
+<g class="hide a7"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">30 tokens · 35 ms</text></g>
+<g class="hide a8"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">35 tokens · 41 ms</text></g>
+<g class="hide a9"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">40 tokens · 47 ms</text></g>
+<g class="hide a10"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">45 tokens · 53 ms</text></g>
+<g class="hide a11"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">50 tokens · 59 ms</text></g>
+<g class="hide a12"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">55 tokens · 65 ms</text></g>
+<g class="hide a13"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">60 tokens · 70 ms</text></g>
+<g class="hide a14"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">65 tokens · 76 ms</text></g>
+<g class="hide a15"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">70 tokens · 82 ms</text></g>
+<g class="hide a16"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">75 tokens · 88 ms</text></g>
+<g class="hide a17"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">80 tokens · 94 ms</text></g>
+<g class="hide a18"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">85 tokens · 100 ms</text></g>
+<g class="hide a19"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">90 tokens · 106 ms</text></g>
+<g class="hide a20"><text x="428.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">95 tokens · 111 ms</text></g>
+<g class="a21"><text x="428.0" y="106.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">100 tokens · 117 ms</text></g>
+<text class="a22" x="28.0" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">Once</text>
+<text class="a23" x="64.2" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">upon</text>
+<text class="a24" x="100.5" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a25" x="115.0" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">time</text>
+<text class="a26" x="144.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a27" x="158.5" y="156" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">there</text>
+<text class="a28" x="202.0" y="156" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a29" x="231.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a30" x="245.5" y="156" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">little</text>
+<text class="a31" x="296.2" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">girl</text>
+<text class="a32" x="332.5" y="156" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">named</text>
+<text class="a33" x="376.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">L</text>
+<text class="a34" x="383.2" y="156" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ily</text>
+<text class="a35" x="405.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a36" x="28.0" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a37" x="57.0" y="176" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">loved</text>
+<text class="a38" x="100.5" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a39" x="122.2" y="176" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">play</text>
+<text class="a40" x="158.5" y="176" textLength="50.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">outside</text>
+<text class="a41" x="216.5" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a42" x="238.2" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a43" x="267.2" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sun</text>
+<text class="a44" x="289.0" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sh</text>
+<text class="a45" x="303.5" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ine</text>
+<text class="a46" x="325.2" y="176" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a47" x="339.8" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">One</text>
+<text class="a48" x="368.8" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">day</text>
+<text class="a49" x="390.5" y="176" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a50" x="28.0" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a51" x="57.0" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">saw</text>
+<text class="a52" x="86.0" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a53" x="100.5" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">big</text>
+<text class="a54" x="122.2" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a55" x="136.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">red</text>
+<text class="a56" x="165.8" y="196" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ball</text>
+<text class="a57" x="202.0" y="196" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a58" x="223.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a59" x="252.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sky</text>
+<text class="a60" x="274.5" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a61" x="289.0" y="196" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">It</text>
+<text class="a62" x="310.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a63" x="339.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a64" x="368.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sun</text>
+<text class="a65" x="390.5" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">!</text>
+<text class="a66" x="28.0" y="216" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a67" x="57.0" y="216" textLength="50.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">thought</text>
+<text class="a68" x="115.0" y="216" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a69" x="136.8" y="216" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a70" x="165.8" y="216" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">so</text>
+<text class="a71" x="187.5" y="216" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">pretty</text>
+<text class="a72" x="231.0" y="216" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a73" x="28.0" y="236" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">L</text>
+<text class="a74" x="35.2" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ily</text>
+<text class="a75" x="64.2" y="236" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">wanted</text>
+<text class="a76" x="115.0" y="236" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a77" x="136.8" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">play</text>
+<text class="a78" x="173.0" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">with</text>
+<text class="a79" x="209.2" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a80" x="238.2" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ball</text>
+<text class="a81" x="267.2" y="236" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a82" x="281.8" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">but</text>
+<text class="a83" x="310.8" y="236" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a84" x="332.5" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a85" x="361.5" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">too</text>
+<text class="a86" x="28.0" y="256" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">high</text>
+<text class="a87" x="64.2" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">up</text>
+<text class="a88" x="86.0" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a89" x="107.8" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a90" x="136.8" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sky</text>
+<text class="a91" x="158.5" y="256" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a92" x="173.0" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a93" x="202.0" y="256" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">tried</text>
+<text class="a94" x="245.5" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a95" x="267.2" y="256" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">jump</text>
+<text class="a96" x="303.5" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">and</text>
+<text class="a97" x="332.5" y="256" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">reach</text>
+<text class="a98" x="376.0" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a99" x="390.5" y="256" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a100" x="28.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">but</text>
+<text class="a101" x="57.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a102" x="86.0" y="276" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">couldn</text>
+<text class="a103" x="129.5" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">'</text>
+<text class="a104" x="136.8" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">t</text>
+<text class="a105" x="144.0" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a106" x="158.5" y="276" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">Then</text>
+<text class="a107" x="187.5" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a108" x="202.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a109" x="231.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">had</text>
+<text class="a110" x="260.0" y="276" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">an</text>
+<text class="a111" x="281.8" y="276" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">idea</text>
+<text class="a112" x="310.8" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a113" x="325.2" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a114" x="354.2" y="276" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">would</text>
+<text class="a115" x="28.0" y="296" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">use</text>
+<text class="a116" x="57.0" y="296" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a117" x="71.5" y="296" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">stick</text>
+<text class="a118" x="115.0" y="296" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a119" x="136.8" y="296" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">knock</text>
+<text class="a21" x="180.2" y="296" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text x="472.0" y="106.0" font-size="16" fill="#0b0b0b" text-anchor="start" font-weight="600">PyTorch with transformers</text>
+<rect x="472" y="118" width="400" height="6" rx="3" fill="#e1e0d9"/>
+<rect class="grow a120" x="472" y="118" width="400" height="6" rx="3" fill="#eb6834"/>
+<g class="hide a121"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">0 tokens · 0 ms</text></g>
+<g class="hide a122"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">5 tokens · 16 ms</text></g>
+<g class="hide a123"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">10 tokens · 33 ms</text></g>
+<g class="hide a124"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">15 tokens · 49 ms</text></g>
+<g class="hide a125"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">20 tokens · 66 ms</text></g>
+<g class="hide a126"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">25 tokens · 82 ms</text></g>
+<g class="hide a127"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">30 tokens · 99 ms</text></g>
+<g class="hide a128"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">35 tokens · 115 ms</text></g>
+<g class="hide a129"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">40 tokens · 132 ms</text></g>
+<g class="hide a130"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">45 tokens · 148 ms</text></g>
+<g class="hide a131"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">50 tokens · 165 ms</text></g>
+<g class="hide a132"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">55 tokens · 181 ms</text></g>
+<g class="hide a133"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">60 tokens · 198 ms</text></g>
+<g class="hide a134"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">65 tokens · 214 ms</text></g>
+<g class="hide a135"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">70 tokens · 231 ms</text></g>
+<g class="hide a136"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">75 tokens · 247 ms</text></g>
+<g class="hide a137"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">80 tokens · 264 ms</text></g>
+<g class="hide a138"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">85 tokens · 280 ms</text></g>
+<g class="hide a139"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">90 tokens · 297 ms</text></g>
+<g class="hide a140"><text x="872.0" y="106.0" font-size="13" fill="#52514e" text-anchor="end" font-weight="400">95 tokens · 313 ms</text></g>
+<g class="a141"><text x="872.0" y="106.0" font-size="13" fill="#0b0b0b" text-anchor="end" font-weight="600">100 tokens · 330 ms</text></g>
+<text class="a142" x="472.0" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">Once</text>
+<text class="a143" x="508.2" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">upon</text>
+<text class="a144" x="544.5" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a145" x="559.0" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">time</text>
+<text class="a146" x="588.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a147" x="602.5" y="156" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">there</text>
+<text class="a148" x="646.0" y="156" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a149" x="675.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a150" x="689.5" y="156" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">little</text>
+<text class="a151" x="740.2" y="156" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">girl</text>
+<text class="a152" x="776.5" y="156" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">named</text>
+<text class="a153" x="820.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">L</text>
+<text class="a154" x="827.2" y="156" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ily</text>
+<text class="a155" x="849.0" y="156" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a156" x="472.0" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a66" x="501.0" y="176" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">loved</text>
+<text class="a157" x="544.5" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a158" x="566.2" y="176" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">play</text>
+<text class="a159" x="602.5" y="176" textLength="50.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">outside</text>
+<text class="a160" x="660.5" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a161" x="682.2" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a162" x="711.2" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sun</text>
+<text class="a163" x="733.0" y="176" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sh</text>
+<text class="a164" x="747.5" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ine</text>
+<text class="a165" x="769.2" y="176" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a166" x="783.8" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">One</text>
+<text class="a167" x="812.8" y="176" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">day</text>
+<text class="a168" x="834.5" y="176" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a169" x="472.0" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a170" x="501.0" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">saw</text>
+<text class="a171" x="530.0" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a110" x="544.5" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">big</text>
+<text class="a172" x="566.2" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a173" x="580.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">red</text>
+<text class="a174" x="609.8" y="196" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ball</text>
+<text class="a175" x="646.0" y="196" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a176" x="667.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a177" x="696.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sky</text>
+<text class="a178" x="718.5" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a179" x="733.0" y="196" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">It</text>
+<text class="a180" x="754.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a181" x="783.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a182" x="812.8" y="196" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sun</text>
+<text class="a183" x="834.5" y="196" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">!</text>
+<text class="a184" x="472.0" y="216" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a185" x="501.0" y="216" textLength="50.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">thought</text>
+<text class="a186" x="559.0" y="216" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a187" x="580.8" y="216" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a188" x="609.8" y="216" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">so</text>
+<text class="a189" x="631.5" y="216" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">pretty</text>
+<text class="a190" x="675.0" y="216" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a191" x="472.0" y="236" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">L</text>
+<text class="a192" x="479.2" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ily</text>
+<text class="a193" x="508.2" y="236" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">wanted</text>
+<text class="a194" x="559.0" y="236" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a195" x="580.8" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">play</text>
+<text class="a196" x="617.0" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">with</text>
+<text class="a197" x="653.2" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a198" x="682.2" y="236" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">ball</text>
+<text class="a199" x="711.2" y="236" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a200" x="725.8" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">but</text>
+<text class="a201" x="754.8" y="236" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a202" x="776.5" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">was</text>
+<text class="a203" x="805.5" y="236" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">too</text>
+<text class="a204" x="472.0" y="256" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">high</text>
+<text class="a205" x="508.2" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">up</text>
+<text class="a206" x="530.0" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">in</text>
+<text class="a207" x="551.8" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<text class="a208" x="580.8" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">sky</text>
+<text class="a209" x="602.5" y="256" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a210" x="617.0" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a211" x="646.0" y="256" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">tried</text>
+<text class="a212" x="689.5" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a213" x="711.2" y="256" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">jump</text>
+<text class="a214" x="747.5" y="256" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">and</text>
+<text class="a215" x="776.5" y="256" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">reach</text>
+<text class="a216" x="820.0" y="256" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">it</text>
+<text class="a217" x="834.5" y="256" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a218" x="472.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">but</text>
+<text class="a219" x="501.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a220" x="530.0" y="276" textLength="43.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">couldn</text>
+<text class="a221" x="573.5" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">'</text>
+<text class="a222" x="580.8" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">t</text>
+<text class="a223" x="588.0" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a224" x="602.5" y="276" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">Then</text>
+<text class="a225" x="631.5" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">,</text>
+<text class="a226" x="646.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">she</text>
+<text class="a227" x="675.0" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">had</text>
+<text class="a228" x="704.0" y="276" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">an</text>
+<text class="a229" x="725.8" y="276" textLength="29.0" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">idea</text>
+<text class="a230" x="754.8" y="276" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">.</text>
+<text class="a231" x="769.2" y="276" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">She</text>
+<text class="a232" x="798.2" y="276" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">would</text>
+<text class="a233" x="472.0" y="296" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">use</text>
+<text class="a234" x="501.0" y="296" textLength="7.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">a</text>
+<text class="a235" x="515.5" y="296" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">stick</text>
+<text class="a236" x="559.0" y="296" textLength="14.5" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">to</text>
+<text class="a237" x="580.8" y="296" textLength="36.2" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">knock</text>
+<text class="a141" x="624.2" y="296" textLength="21.8" lengthAdjust="spacingAndGlyphs" font-size="13" font-family="ui-monospace, 'Cascadia Mono', Consolas, Menlo, monospace" fill="#0b0b0b">the</text>
+<line x1="28" x2="872" y1="320" y2="320" stroke="#e1e0d9"/>
+<text x="28.0" y="344.0" font-size="12" fill="#6f6d68" text-anchor="start" font-weight="400">Real output from tinyllama-15M. Each engine runs at its median time per token, 1.17 ms and 3.30 ms, on one RTX 5080. Data: benchmarks/results/</text>
+</svg>

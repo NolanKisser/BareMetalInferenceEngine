@@ -1,0 +1,30 @@
+PASS  gemm 16x16 * 16x16                                     worst relative error 1.45e-07
+PASS  gemm 128x128 * 128x128                                 worst relative error 2.28e-06
+PASS  gemm 3x7 * 7x5                                         worst relative error 5.04e-08
+PASS  gemm 17x65 * 65x33                                     worst relative error 1.03e-06
+PASS  gemm 1x4096 * 4096x4096                                worst relative error 3.16e-05
+PASS  rms_norm size 64                                       worst relative error 5.46e-08
+PASS  rms_norm size 256                                      worst relative error 7.13e-08
+PASS  rms_norm size 300                                      worst relative error 7.23e-08
+PASS  rms_norm size 4096                                     worst relative error 7.93e-08
+PASS  rms_norm in place, as forward() calls it, size 4096    worst relative error 9.08e-08
+PASS  softmax size 1                                         worst relative error 0
+PASS  softmax size 100                                       worst relative error 3.61e-09
+PASS  softmax size 4096                                      worst relative error 2.33e-10
+PASS  softmax does not overflow on values near 1000          worst relative error 3.63e-09
+PASS  softmax batch, leaves the gaps between vectors alone   worst relative error 7.03e-09
+PASS  swiglu size 4096                                       worst relative error 1.41e-07
+PASS  swiglu stays finite for very large inputs              worst relative error 0
+PASS  rope q at position 0, 6 heads                          worst relative error 0
+PASS  rope k, 6 heads, position 0                            worst relative error 0
+PASS  rope q at position 1, 6 heads                          worst relative error 6.39e-08
+PASS  rope k, 3 heads, position 1                            worst relative error 5.93e-08
+PASS  rope q at position 37, 8 heads                         worst relative error 1.07e-06
+PASS  rope k, 8 heads, position 37                           worst relative error 1.53e-06
+PASS  add in place, size 1000                                worst relative error 0
+PASS  kv store writes one position and leaves the rest alone worst relative error 0
+PASS  attention, 1 heads, 1 of 1 positions                   worst relative error 0
+PASS  attention, 6 heads, 1 of 256 positions                 worst relative error 0
+PASS  attention, 6 heads, 200 of 256 positions               worst relative error 3.47e-08
+
+0 check(s) failed
