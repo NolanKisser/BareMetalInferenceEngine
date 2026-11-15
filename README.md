@@ -6,7 +6,7 @@ This project was designed as an educational, bare-metal approach to serving Larg
 
 ## Features
 
-- **Custom BPE Tokenizer**: Reads vocabulary maps and performs Byte-Pair Encoding directly in C++.
+- **Custom BPE Tokenizer**: Byte-pair encoding for SentencePiece-style Llama tokenizers, written in C++. Its token IDs and text match Hugging Face `tokenizers`.
 - **Direct Weight Loading**: Maps raw binary tensor files straight into host memory.
 - **VRAM Memory Management**: Custom RAII wrappers for `cudaMalloc` and device pointer lifecycle handling.
 - **Static KV Caching**: Pre-allocates Keys and Values in VRAM based on the maximum sequence length to dramatically speed up token generation.
@@ -51,7 +51,7 @@ Here is the output of both engines, slowed 40 times so you can follow it.
 
 The project builds 3 distinct executable targets:
 
-1. `inference_engine`: Generates tokens greedily from a prompt of token IDs.
+1. `inference_engine`: Generates text greedily from a text prompt, printing it as it goes.
 2. `benchmark`: A standalone tool that generates 100 tokens with a loaded model, reporting raw `Tokens/Sec`.
 3. `server`: A placeholder for the API endpoint. It runs one simulated request through the engine and exits.
 
@@ -95,24 +95,31 @@ pip install torch transformers safetensors numpy huggingface_hub
 # Download the weights, pinned to one revision. Avoid the repository's pickle file.
 hf download nickypro/tinyllama-15M model.safetensors config.json tokenizer.json tokenizer_config.json --revision a97e01fa7d54c088df9dc1b53d581a863ce08cd6 --local-dir models/tinyllama-15M
 
-# Convert the weights to the engine's format
+# Convert the weights and tokenizer to the engine's format
 python scripts/export_llama.py models/tinyllama-15M models/tinyllama-15M/export
 
 # Generate 40 tokens from "Once upon a time"
-./build/Release/inference_engine.exe models/tinyllama-15M/export 40 1 9038 2501 263 931
+./build/Release/inference_engine.exe models/tinyllama-15M/export 40 "Once upon a time"
 ```
 
-The tokenizer does not implement BPE yet, so prompts and output are token IDs.
+Generation stops early at the end-of-sequence token. To pass token IDs and print token IDs instead, use `--ids`:
+
+```bash
+./build/Release/inference_engine.exe models/tinyllama-15M/export 40 --ids 1 9038 2501 263 931
+```
+
+The export writes `tokenizer.txt` only for SentencePiece-style tokenizers, like those of Llama 2 and TinyLlama. Llama 3's byte-level tokenizer is not supported yet, so the export skips it with a message and `--ids` still works.
 
 ## Testing and Benchmarking
 
 ### 1. Run the Checks
 The CPU checks run anywhere. The GPU checks compare each kernel with a CPU reference and need a CUDA device.
 
-To also compare the engine's logits with Hugging Face `transformers`, write the reference file and then re-run CMake's configure step, which adds the `logits` test:
+To also compare the engine with Hugging Face, write the reference files and then re-run CMake's configure step, which adds the `logits` and `tokenizer_reference` tests:
 
 ```bash
 python scripts/reference_logits.py models/tinyllama-15M models/tinyllama-15M/export/reference_logits.bin
+python scripts/reference_tokens.py models/tinyllama-15M models/tinyllama-15M/export/tokenizer_reference.txt
 cmake -S . -B build
 ```
 
@@ -124,6 +131,8 @@ ctest --test-dir build -C Release -L gpu --output-on-failure
 ```
 
 GitHub CI compiles every target and runs the CPU checks. Its standard runners have no GPU, so run the GPU checks locally.
+
+The `tokenizer_reference` test encodes 1,023 texts and decodes 2,023 token sequences, and compares each result with Hugging Face `tokenizers`. The texts include spaces, tabs, newlines, accented letters, CJK, emoji and special tokens such as `</s>`. Most are random strings with a fixed seed. Every result matches.
 
 The `logits` test feeds a whole sequence through the engine, using the KV cache, and compares every logit at every position with the reference. With the default 45-token sequence, the largest difference is 0.00005 and the most likely next token always matches.
 
@@ -205,5 +214,5 @@ The engine runs small Llama-architecture models, and its logits match Hugging Fa
 | RMSNorm, RoPE, softmax, SwiGLU and attention kernels | Work |
 | KV cache | Works |
 | Weight loading | Works for 32-bit float exports. Quantized weights are not supported. |
-| Tokenizer | Converts characters to byte values. BPE is not implemented. |
+| Tokenizer | BPE for SentencePiece-style tokenizers, matching Hugging Face. Llama 3's byte-level BPE is not supported. |
 | Server | Simulates one request. No socket is opened. |
